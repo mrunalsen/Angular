@@ -6,7 +6,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 export class HighlightDirective {
 
   @HostBinding('style.backgroundColor')
-  bgcolor: string='';
+  bgcolor: string='green';
   @HostBinding('style.color') color: string='';
 
   @HostListener('mouseenter') setMouseEnter() {

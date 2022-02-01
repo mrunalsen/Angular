@@ -9,6 +9,7 @@ export class AppComponent implements OnInit {
   firstName: string = '';
   lastName: string = '';
   index: string = '';
+  currentdate=new Date();
   currencycode: string = 'INR';
   vClass: boolean = false;
 
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit {
 
   }
   
-  listData = [{
+  listDataArray = [{
     id: 1,
     name: 'Mrunal Patel',
     email: 'mrunal@gmail.com',
@@ -92,7 +93,7 @@ export class AppComponent implements OnInit {
   ];
   
   indexClick(i: number) {
-    alert(this.listData[i].email + this.index);
+    alert(this.listDataArray[i].email + this.index);
   }
   trackByid(index: number, listData: any) {
     return listData.id;
