@@ -1,0 +1,54 @@
+<form [formGroup]="registrationform" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <!-- <div>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter First Name" formControlName="firstName" class="text-box">
+            <div *ngIf="getvalue['firstName'].touched && getvalue['firstName'].invalid">
+                <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstname'].errors['required']">*Firstname is required</div>
+                <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstname'].errors['minlength']">minimum length should be 3</div>
+            </div>
+        </div> -->
+
+        <div>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" formControlName="lastName" class="text-box">
+            <div *ngIf="getvalue['lastName'].touched && getvalue['lastName'].invalid">
+                <div class="text-danger" *ngIf="getvalue['lastName'].errors && getvalue['lastname'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['lastName'].errors && getvalue['lastname'].errors && getvalue['lastName'].errors['required']">*Last name is required</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label for="e-mail">E-mail:</label><br>
+            <input type="text" id="e-mail" placeholder="xyz@gmail.com" formControlName="email" class="text-box">
+            <div *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
+                <div class="text-danger" *ngIf="getvalue['email'].errors && getvalue['email'].errors['required']">*enter proper format</div>
+            </div>
+        </div>
+        <div>
+            <label for="contact">Contact no:</label><br>
+            <input type="text" id="contact" name="contact" placeholder="+91 0000000000" formControlName="contact" class="text-box">
+        </div>
+        <div>
+            <label for="gender">Gender:</label><br>
+            <input type="radio" id="female" name="gender" value="female" formControlName="gender">Female
+            <input type="radio" id="Male" name="gender" value="Male" formControlName="gender">Male
+        </div>
+        <div>
+            <label for="date">Date of Employment</label>
+            <input type="date" id="date" formControlName="date" class="text-box">
+        </div>
+        <div>
+            <label for="department">Department</label> <br>
+            <select name="department" id="Department" formControlName="department">
+                <option value="html">HTML</option>
+                <option value="angular">Angular</option>
+                <option value="css">CSS</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </div>
+</form>
