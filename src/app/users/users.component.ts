@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
-  constructor() { }
+  isAddBtnShown:boolean = true;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+ 
 }

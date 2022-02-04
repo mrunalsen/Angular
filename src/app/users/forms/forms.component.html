@@ -1,4 +1,4 @@
-<form [formGroup]="registrationform" (ngSubmit)="onSubmit()">
+<form [formGroup]="registrationForm" (ngSubmit)="saveData()">
     <div class="container">
         <!-- <div>
             <label for="firstname">First Name</label>
@@ -10,25 +10,25 @@
         </div> -->
         <div>
             <label for="firstname">First Name</label>
-            <input type="text" id="firsttname" name="firstname" placeholder="Enter First Name" formControlName="firsttName" class="text-box">
+            <input type="text" id="firsttname" name="firstname" placeholder="Enter First Name" formControlName="firstName" class="text-box">
             <div *ngIf="getvalue['firstName'].touched && getvalue['firstName'].invalid">
-                <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstname'].invalid">
-                    <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstname'].errors && getvalue['firstName'].errors['required']">*First name is required</div>
-                </div>
+                <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstName'].errors['required']">*First name is required</div>
+                <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstName'].errors['minlength']">minlength should be 3</div>
             </div>
         </div>
         <div>
             <label for="lastname">Last Name</label>
             <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" formControlName="lastName" class="text-box">
             <div *ngIf="getvalue['lastName'].touched && getvalue['lastName'].invalid">
-                <div class="text-danger" *ngIf="getvalue['lastName'].errors && getvalue['lastname'].invalid">
-                    <div class="text-danger" *ngIf="getvalue['lastName'].errors && getvalue['lastname'].errors && getvalue['lastName'].errors['required']">*Last name is required</div>
-                </div>
+                <div class="text-danger" *ngIf="getvalue['lastName'].errors && getvalue['lastName'].errors['required']">*last name is required</div>
             </div>
         </div>
         <div>
             <label for="e-mail">E-mail:</label><br>
             <input type="text" id="e-mail" placeholder="xyz@gmail.com" formControlName="email" class="text-box">
+            <!-- <div *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
+                <div class="text-danger" *ngIf="getvalue['email'].errors && getvalue['email'].errors['required']">*enter proper format</div>
+            </div> -->
             <div *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
                 <div class="text-danger" *ngIf="getvalue['email'].errors && getvalue['email'].errors['required']">*enter proper format</div>
             </div>
@@ -55,8 +55,8 @@
             </select>
         </div>
         <div>
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
+            <button class="btn-primary btn" type="submit">Submit</button>
+            <button class="btn-danger btn mx-3" type="reset ">Reset</button>
         </div>
     </div>
 </form>

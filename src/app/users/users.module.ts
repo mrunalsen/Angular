@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsComponent } from './forms/forms.component';
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
-import { RouterModule } from '@angular/router';
-import { FormsComponent } from './forms/forms.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -19,6 +18,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   
-  exports:[RouterModule, UsersComponent]
+  exports:[UsersComponent]
 })
 export class UsersModule { }

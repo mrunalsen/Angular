@@ -9,13 +9,13 @@ const routes: Routes = [
     path: '', component: UsersComponent,
     children: [
       {
-        path: '', redirectTo: 'user-form'
+        path: '', redirectTo: 'users-list'
       },
       {
-        path: 'user-form', component: FormsComponent
+        path: 'users-form', component: FormsComponent
       },
       {
-        path: 'user-list', component: ListComponent
+        path: 'users-list', component: ListComponent
       }
     ]
   },
