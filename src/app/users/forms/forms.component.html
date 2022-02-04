@@ -8,7 +8,15 @@
                 <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstname'].errors['minlength']">minimum length should be 3</div>
             </div>
         </div> -->
-
+        <div>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firsttname" name="firstname" placeholder="Enter First Name" formControlName="firsttName" class="text-box">
+            <div *ngIf="getvalue['firstName'].touched && getvalue['firstName'].invalid">
+                <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstname'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstname'].errors && getvalue['firstName'].errors['required']">*First name is required</div>
+                </div>
+            </div>
+        </div>
         <div>
             <label for="lastname">Last Name</label>
             <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" formControlName="lastName" class="text-box">
