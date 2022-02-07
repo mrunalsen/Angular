@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicesService {
-
-//   constructor(private httpService: httpClient) {
-//     this.apiLink = environment.baseURL;
-//    }
+  apiLink: string
+  constructor(private httpService: HttpClient) {
+    this.apiLink = environment.baseURL;
+   }
 //    getData(): Observable<any> {
 //      return this.httpService.get(`${this.apiLink}/posts`);
 //    }

@@ -27,5 +27,19 @@
         "id": 6,
         "title": "Angular 8",
         "releaseDate": "May 28, 2019"
-    }]
+    }],
+
+    "department": [{
+            "id": 1,
+            "dname": "HTML"
+        },
+        {
+            "id": 2,
+            "dname": "DOTnet"
+        },
+        {
+            "id": 3,
+            "dname": "Android"
+        }
+    ]
 }

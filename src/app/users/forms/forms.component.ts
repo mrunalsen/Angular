@@ -17,7 +17,12 @@ export class FormsComponent implements OnInit {
     this.buildUserForm()
     console.log(this.registrationForm);
   }
-
+  navigateToList() {
+    this.router.navigate(['/users/users-list']);
+  }
+  onReset() {
+    this.registrationForm.reset()
+  }
   buildUserForm() {
     this.registrationForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
@@ -47,6 +52,6 @@ export class FormsComponent implements OnInit {
         return;
       }
     }
-    this.router.navigate(['users/users-list'])
+    // this.router.navigate(['users/users-list'])
   }
 }
