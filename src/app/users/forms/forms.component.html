@@ -1,4 +1,4 @@
-<form [formGroup]="registrationForm" (ngSubmit)="saveData()">
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     <div class="container">
         <!-- <div>
             <label for="firstname">First Name</label>
@@ -55,8 +55,8 @@
             </select>
         </div>
         <div>
-            <button class="btn-primary btn" type="submit">Submit</button>
-            <button class="btn-danger btn mx-3" type="reset " (click)="onReset()">Reset</button>
+            <button class="btn-primary btn" type="submit" [disabled]="registrationForm.invalid">Submit</button>
+            <button class="btn-danger btn mx-3" type="button" (click)="onReset()">Reset</button>
         </div>
     </div>
 </form>

@@ -1,45 +1,38 @@
 {
-    "posts": [{
-        "id": 1,
-        "title": "AngularJS (1.0.0)",
-        "releaseDate": "June 14th, 2012"
-    }, {
-        "id": 2,
-        "title": "Angular 2",
-        "releaseDate": "September 14, 2016"
-    }, {
-        "id": 3,
-        "title": "Angular 4",
-        "releaseDate": "March 23, 2017"
-    }, {
-        "id": 4,
-        "title": "Angular 5",
-        "releaseDate": "November 1, 2017"
-    }, {
-        "id": 5,
-        "title": "Angular 6",
-        "releaseDate": "May 4th, 2018"
-    }, {
-        "id": 6,
-        "title": "Angular 7",
-        "releaseDate": "October 18, 2018"
-    }, {
-        "id": 6,
-        "title": "Angular 8",
-        "releaseDate": "May 28, 2019"
-    }],
-
-    "department": [{
-            "id": 1,
-            "dname": "HTML"
-        },
-        {
-            "id": 2,
-            "dname": "DOTnet"
-        },
-        {
-            "id": 3,
-            "dname": "Android"
-        }
-    ]
+  "department": [
+    {
+      "id": 1,
+      "dname": "HTML"
+    },
+    {
+      "id": 2,
+      "dname": "DOTnet"
+    },
+    {
+      "id": 3,
+      "dname": "Android"
+    }
+  ],
+  "form": [
+    {
+      "id": 5,
+      "firstName": "Joe",
+      "lastName": "Bloggs",
+      "email": "joe@bloggs.com",
+      "contact": "8460849046",
+      "gender": "Male",
+      "date": "2022-02-02",
+      "department": "html"
+    },
+    {
+      "id": 6,
+      "firstName": "Ayushi",
+      "lastName": "Parmar",
+      "email": "parmarayushi@1rivet.com",
+      "contact": "1234567890",
+      "gender": "female",
+      "date": "2022-02-10",
+      "department": "angular"
+    }
+  ]
 }

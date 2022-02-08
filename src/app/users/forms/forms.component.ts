@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import {ServicesService} from '../services/services.service'
 
 @Component({
   selector: 'app-forms',
@@ -11,11 +12,23 @@ export class FormsComponent implements OnInit {
 
   submitted!: boolean;
   registrationForm: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router) { }
+  id:number;
+  isAddMode?: boolean;
+  constructor(private fb: FormBuilder, private router: Router, private service: ServicesService,private route: ActivatedRoute,) { }
   
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.isAddMode = !this.id;
+
     this.buildUserForm()
     console.log(this.registrationForm);
+
+    if (!this.isAddMode) {
+      this.service
+        .getById(this.id)
+        .subscribe((x) => this.registrationForm.patchValue(x));
+    }
+    
   }
   navigateToList() {
     this.router.navigate(['/users/users-list']);
@@ -25,6 +38,7 @@ export class FormsComponent implements OnInit {
   }
   buildUserForm() {
     this.registrationForm = this.fb.group({
+      id: [''],
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -35,10 +49,12 @@ export class FormsComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    console.log(this.registrationForm);
-    this.router.navigate(['user-list'])
-
+onSubmit(){
+    if(this.isAddMode){
+      this.saveData()
+    }else{
+      this.updateUser()
+    }
   }
 
   get getvalue() {
@@ -52,6 +68,29 @@ export class FormsComponent implements OnInit {
         return;
       }
     }
-    // this.router.navigate(['users/users-list'])
+    console.log(this.registrationForm);
+    this.service.createData(this.registrationForm.value).subscribe((result)=> {
+      alert('Data Saved Successfully');
+    },
+    (error)=> {
+      alert('Something went wrong');
+    }
+    );
+    
+    this.router.navigate(['users/users-list'])
   }
+
+  updateUser() {
+    console.log(this.registrationForm);
+    this.service.updateUser(this.id,this.registrationForm.value).subscribe(
+      (result) => {
+        alert('Data Updated Successfully');
+      },
+      (error) => {
+        alert('Something Went Wrong');
+      }
+    );
+    this.router.navigate(['users/users-list']);
+  }
+  
 }

@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,8 +11,6 @@ import { HighlightDirective } from './directives/highlight.directive';
 
 import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
 
-const appRoutes: Routes=[
-]
 
 @NgModule({
   declarations: [
@@ -24,7 +24,9 @@ const appRoutes: Routes=[
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    RouterModule.forRoot(appRoutes)
+    ReactiveFormsModule,
+    FormsModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
