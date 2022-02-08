@@ -11,7 +11,8 @@
         <th>Department</th>
         <th>Action</th>
     </tr>
-    <tr *ngFor="let user of userData | search:searchText ; let i=index">
+    <tr *ngFor="let user of userData | search:searchText as result ; let i=index">
+
         <th scope="row">{{i+1}}.</th>
         <td>{{user.firstName+" "+user.lastName}}</td>
         <td>{{user.email}}</td>
@@ -26,5 +27,9 @@
         </td>
 
 
+        <td *ngIf="result.length === 0">no problem</td>
+    </tr>
+    <tr>
     </tr>
 </table>
+<!-- ,*ngIf="( userData | search:searchText) as result" -->
