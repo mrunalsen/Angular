@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { ResumeService } from '../services/resume.service';
 
 @Component({
   selector: 'app-resumeeditor',
@@ -11,11 +12,14 @@ export class ResumeeditorComponent implements OnInit {
   resumeForm!: FormGroup;
   
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private resumeService:ResumeService) { 
     this.buildForm()
   }
   onSubmit(){
-
+    this.resumeService.saveForm(this.resumeForm.value).subscribe(
+      (data:any)=> {console.log("success", data);
+      }
+    )
   }
   ngOnInit(): void {
   }
