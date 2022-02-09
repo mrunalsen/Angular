@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { ResumebuilderModule } from './Modules/resumebuilder/resumebuilder.module';
 
 import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
 
@@ -18,7 +19,6 @@ import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
     HighlightDirective,
     DatabindingComponent,
     ToUpperCasePipe,
-  
   ],
   imports: [
     BrowserModule,
@@ -26,6 +26,7 @@ import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
     CoreModule,
     ReactiveFormsModule,
     FormsModule,
+    ResumebuilderModule,
   
   ],
   providers: [],

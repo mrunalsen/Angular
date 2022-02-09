@@ -33,6 +33,16 @@
       "gender": "female",
       "date": "2022-02-10",
       "department": "angular"
+    },
+    {
+      "id": 7,
+      "firstName": "Joe",
+      "lastName": "Bloggs",
+      "email": "joe@bloggs.com",
+      "contact": "8460849046",
+      "gender": "female",
+      "date": "2022-02-11",
+      "department": ""
     }
   ]
 }
