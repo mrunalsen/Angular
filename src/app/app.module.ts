@@ -27,7 +27,7 @@ import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
     ReactiveFormsModule,
     FormsModule,
     ResumebuilderModule,
-  
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
-<button><a routerLink="../viewer" >Resumes</a></button>
-<form [formGroup]="resumeForm">
+<button><a routerLink="/resume/viewer" >Resumes</a></button>
+<form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
     <div>
         <label for="name">Name</label>
         <input type="text" id="name" placeholder="Enter full name" formControlName="name">
@@ -11,32 +11,39 @@
 
     </div>
     <div>
-        <label for="profile">Profile</label>
-        <input type="text" id="profile" formControlName="profile">
-    </div>
-    <div>
         <label for="email">E-mail</label>
         <input type="email" id="email" placeholder="xyz@zyx.com" formControlName="email">
     </div>
     <div formArrayName="skills">
         <label for="skills">Skills</label>
-        <ng-container *ngFor="let control of skills.controls; let i = index">
+        <div *ngFor="let control of skills.controls; let i = index" [formGroupName]="i">
             <input type="text" id="skills" formControlName="skills">
             <button (click)="skills.removeAt(i)">Delete</button>
-        </ng-container>
-        <button (click)="addSkills()"><i>+</i> Add Skills</button>
+        </div>
+        <button type="button" (click)="addSkills()"><i>+</i> Add Technical Skills</button>
     </div>
     <div>
-        <label for="experience">Experience</label>
-        <input type="text">
+        <div formArrayName="experience">
+            <div>
+                <label for="experience">Experience</label>
+                <div *ngFor="let control of experience.controls; let i = index" [formGroupName]="i">
+                    <input type="text" id="place" placeholder="place" formControlName="place">
+                    <input type="text" id="designation" placeholder="designation" formControlName="designation">
+                    <input type="text" id="description" placeholder="description" formControlName="description">
+                    <input type="text" id="year" placeholder="year" formControlName="year">
+                    <button type="button" (click)="experience.removeAt(i)"> remove experience</button>
+                </div>
+                <button type="button" (click)="addExperience()">add experience</button>
+            </div>
+        </div>
     </div>
     <div>
         <label for="education">Education</label>
-        <ng-container *ngFor="let control of education.controls; let i = index">
+        <div *ngFor="let control of education.controls; let i = index" [formGroupName]="i">
             <input type="text" id="experience" formControlName="experience">
             <button (click)="education.removeAt(i)">Delete</button>
-        </ng-container>
-        <button (click)="addEducation()"><i>+</i>Add Education</button>
+        </div>
+        <button type="button" (click)="addEducation()"><i>+</i>Add Education</button>
     </div>
     <div>
         <label for="contact">Contact No:</label>

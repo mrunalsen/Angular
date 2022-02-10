@@ -17,7 +17,7 @@ export class ResumeeditorComponent implements OnInit {
   }
   onSubmit(){
     this.resumeService.saveForm(this.resumeForm.value).subscribe(
-      (data:any)=> {console.log("success", data);
+      ()=> {console.log("success")
       }
     )
   }
@@ -38,9 +38,7 @@ export class ResumeeditorComponent implements OnInit {
    }
    newSkills():FormGroup {
      return this.fb.group({
-       school:[''],
-       degree:[''],
-       score:['']
+       skills:[''],
      })
 
    }
@@ -63,10 +61,12 @@ export class ResumeeditorComponent implements OnInit {
       year:[''],
     })
   }
-  // addExperience(){
-  //   this.experience.push(this.newExperience());
-  // }
-  
+  addExperience(){
+    this.experience.push(this.newExperience());
+  }
+  get experience() : FormArray {
+    return this.resumeForm.get("experience") as FormArray
+  }
   addEducation() {
     this.education.push(this.newEducation());
   }
