@@ -27,155 +27,42 @@ a {
     text-decoration: none;
 }
 
-
-/* Header */
-
-header {
-    display: flex;
-    flex-shrink: 0;
-    height: 70px;
-    padding: 15px 50px 0 20px;
-    border-bottom: 1px;
-    margin: 10px;
-    justify-content: space-between;
-}
-
-.h-btn {
-    background-color: #1adca1;
-    border-radius: 10px;
-    height: 40px;
-    width: 200px;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-header .search input {
-    height: 40px;
-    width: 500px;
-    border-radius: 5px;
-    border: none;
-    padding-right: 24px;
-}
-
-header #search {
-    height: 40px;
-}
-
-header .icon {
-    font-size: 20px;
-    color: rgb(117, 117, 117);
-    right: 3px;
-}
-
-
-/* Aside */
-
-aside {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 200px;
-    max-width: 200px;
-}
-
-.content-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-main {
-    overflow: auto;
-    height: 100%;
-}
-
-
-/* Nav header*/
-
-.polka {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    height: 80px;
-    padding: 10px;
-    margin: 10px;
-    border-bottom: 1px solid rgb(233, 232, 232);
-}
-
-.polka a {
-    color: black;
-    font-size: 12px;
-}
-
-.polka a:hover {
-    background-color: white;
-}
-
-
-/* Navbar */
-
-nav {
-    height: 100%;
-    text-align: center;
-    color: rgb(116, 116, 116);
-    flex-grow: 1;
-    overflow: auto;
-    padding: 0 20px;
-}
-
-ul {
-    list-style: none;
-    text-align: left;
-}
-
-nav .nav-1 {
-    padding-top: 30px;
-    border-bottom: 1px solid rgb(223, 223, 223);
-}
-
-#icons {
-    height: 12px;
-    padding-right: 5px;
-}
-
-
-/* Links */
-
-nav a {
-    display: block;
-    text-decoration: none;
-    color: rgb(141, 141, 141);
-    padding: 1rem;
-}
-
-a:hover {
-    text-decoration: none;
-    color: black;
-    background-color: rgb(235, 235, 235);
-    border-radius: 5px;
-}
-
-.head {
-    display: flex;
-    height: 100px;
-    flex-grow: 1;
-    border: 1px solid #ccc;
-}
-
-.card {
-    background-color: tomato;
-    width: 100%;
-    height: 400px;
-    margin: 1rem;
-}
-
-
-/* Icons */
-
-.icon {
-    padding: 10px;
-    font-size: 20px;
-}
+// /* Header */
+// header {
+//     display: flex;
+//     flex-shrink: 0;
+//     height: 70px;
+//     padding: 15px 50px 0 20px;
+//     border-bottom: 1px;
+//     margin: 10px;
+//     justify-content: space-between;
+// }
+// .h-btn {
+//     background-color: #1adca1;
+//     border-radius: 10px;
+//     height: 40px;
+//     width: 200px;
+//     color: #fff;
+//     border: none;
+//     cursor: pointer;
+// }
+// header .search input {
+//     height: 40px;
+//     width: 500px;
+//     border-radius: 5px;
+//     border: none;
+//     padding-right: 24px;
+// }
+// header #search {
+//     height: 40px;
+// }
+// header .icon {
+//     font-size: 20px;
+//     color: rgb(117, 117, 117);
+//     right: 3px;
+// }
+// /* Icons */
+// .icon {
+//     padding: 10px;
+//     font-size: 20px;
+// }

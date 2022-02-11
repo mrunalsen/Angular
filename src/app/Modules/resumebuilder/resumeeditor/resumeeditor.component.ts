@@ -9,7 +9,7 @@ import { ResumeService } from '../services/resume.service';
 })
 export class ResumeeditorComponent implements OnInit {
 
-  resumeForm!: FormGroup;
+  resumeForm: FormGroup;
   
 
   constructor(private fb: FormBuilder, private resumeService:ResumeService) { 
@@ -26,13 +26,13 @@ export class ResumeeditorComponent implements OnInit {
 
   buildForm() {
     this.resumeForm = this.fb.group({
-    name: [''],
-    designation: [''],
-    email: [''],
-    contact: [''],
-    skills: this.fb.array([]),
-    experience: this.fb.array([]),
-    education: this.fb.array([])
+    name: ['',Validators.required, Validators.minLength(3)],
+    designation: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.email]],
+    contact: ['', Validators.required],
+    skills: this.fb.array([], Validators.required),
+    experience: this.fb.array([], Validators.required),
+    education: this.fb.array([], Validators.required)
     })
     
    }
@@ -80,5 +80,10 @@ export class ResumeeditorComponent implements OnInit {
       score:['']
     })
 }
-
+get getvalue() {
+  return  this.resumeForm.controls;
+}
+onReset() {
+  this.resumeForm.reset()
+}
 }

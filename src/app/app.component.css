@@ -5,3 +5,11 @@ td {
     border: 1px solid black;
     text-align: center;
 }
+
+.section {
+    display: flex;
+}
+
+.content-wrapper {
+    width: 100%;
+}

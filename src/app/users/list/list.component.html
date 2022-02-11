@@ -1,33 +1,35 @@
-<button type="button" (click)="navigateToForm() ">add</button>
-<input type="text" class="search-text" [(ngModel)]="searchText">
-<table>
-    <tr>
-        <th>Sr No.</th>
-        <th>Name</th>
-        <th>E-mail</th>
-        <th>Gender</th>
-        <th>Contact No</th>
-        <th>DOE</th>
-        <th>Department</th>
-        <th>Action</th>
-    </tr>
-    <tr *ngFor="let user of userData | search:searchText as result ; let i=index">
+<div class="list-container">
+    <button type="button" (click)="navigateToForm() ">add</button>
+    <input type="text" class="search-text" [(ngModel)]="searchText">
+    <table>
+        <tr>
+            <th>Sr No.</th>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Gender</th>
+            <th>Contact No</th>
+            <th>DOE</th>
+            <th>Department</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let user of userData | search:searchText as result ; let i=index">
 
-        <th scope="row">{{i+1}}.</th>
-        <td>{{user.firstName+" "+user.lastName}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.gender}}</td>
-        <td>{{user.contact}}</td>
-        <td>{{user.date | date: 'MM/dd/yyyy'}}</td>
-        <td>{{user.department}}</td>
-        <td>
-            <a routerLink="/users/edit/{{user.id}}">Edit
+            <th scope="row">{{i+1}}.</th>
+            <td>{{user.firstName+" "+user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.contact}}</td>
+            <td>{{user.date | date: 'MM/dd/yyyy'}}</td>
+            <td>{{user.department}}</td>
+            <td>
+                <a routerLink="/users/edit/{{user.id}}">Edit
             </a>
-            <button class="button" (click)="deleteUser(user.id)">Delete</button>
-        </td>
+                <button class="button" (click)="deleteUser(user.id)">Delete</button>
+            </td>
 
 
-        <td *ngIf="result.length === 0">no result found</td>
-    </tr>
-</table>
-<!-- ,*ngIf="( userData | search:searchText) as result" -->
+            <td *ngIf="result.length === 0">no result found</td>
+        </tr>
+    </table>
+    <!-- ,*ngIf="( userData | search:searchText) as result" -->
+</div>
