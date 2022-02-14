@@ -13,17 +13,19 @@
       "dname": "Android"
     }
   ],
-  "form": [
+  "formData": [
     {
-      "id": 5,
-      "firstName": "Joe",
-      "lastName": "Bloggs",
+      "id": 1,
+      "firstName": "Joe Bloggs",
       "email": "joe@bloggs.com",
       "contact": "8460849046",
+      "city": "Valsad",
       "gender": "Male",
-      "date": "2022-02-02",
-      "department": "html"
-    },
+      "date": "2022-02-19",
+      "department": "css"
+    }
+  ],
+  "form": [
     {
       "id": 6,
       "firstName": "Ayushi",
@@ -33,26 +35,6 @@
       "gender": "female",
       "date": "2022-02-10",
       "department": "angular"
-    },
-    {
-      "id": 7,
-      "firstName": "Joe",
-      "lastName": "Bloggs",
-      "email": "joe@bloggs.com",
-      "contact": "8460849046",
-      "gender": "female",
-      "date": "2022-02-11",
-      "department": ""
-    },
-    {
-      "id": 8,
-      "firstName": "Geralt",
-      "lastName": "Of Rivia",
-      "email": "geralt@rivial.com",
-      "contact": "248365",
-      "gender": "Male",
-      "date": "2022-02-08",
-      "department": "css"
     },
     {
       "id": 9,
@@ -86,32 +68,42 @@
     },
     {
       "id": 12,
-      "firstName": "Alicia",
-      "lastName": "jwevfc",
-      "email": "mjshvck@dmgvc.com",
-      "contact": "8460849046",
-      "gender": "Male",
-      "date": "2022-02-05",
-      "department": "css"
-    },
-    {
-      "id": 13,
-      "firstName": "Joe",
-      "lastName": "Bloggs",
+      "firstName": "Joe Bloggs",
       "email": "joe@bloggs.com",
       "contact": "8460849046",
+      "city": "Valsad",
       "gender": "female",
       "date": "2022-02-04",
       "department": "html"
     },
     {
+      "id": 13,
+      "firstName": "Joe Bloggs",
+      "email": "joe@bloggs.com",
+      "contact": "8460849046",
+      "city": "vcz",
+      "gender": "female",
+      "date": "2022-02-03",
+      "department": "angular"
+    },
+    {
       "id": 14,
-      "firstName": "Kevang",
-      "lastName": "Bloggs",
-      "email": "xyz@zyx.com",
-      "contact": "77777777777",
+      "firstName": "Mrunal Patel",
+      "lastName": "ergrgrg",
+      "email": "mrunalpatel2500@gmail.com",
+      "contact": "8460849046",
       "gender": "Male",
-      "date": "2022-02-10",
+      "date": "2022-02-03",
+      "department": "html"
+    },
+    {
+      "id": 15,
+      "firstName": "Joe",
+      "lastName": "Bloggs",
+      "email": "joe@bloggs.com",
+      "contact": "12",
+      "gender": "Male",
+      "date": "2022-02-18",
       "department": "angular"
     }
   ],
@@ -202,56 +194,6 @@
         }
       ],
       "id": 2
-    },
-    {
-      "name": null,
-      "designation": null,
-      "email": null,
-      "contact": null,
-      "skills": [],
-      "experience": [],
-      "education": [],
-      "id": 3
-    },
-    {
-      "name": null,
-      "designation": null,
-      "email": null,
-      "contact": null,
-      "skills": [],
-      "experience": [],
-      "education": [],
-      "id": 4
-    },
-    {
-      "name": null,
-      "designation": null,
-      "email": null,
-      "contact": null,
-      "skills": [],
-      "experience": [],
-      "education": [],
-      "id": 5
-    },
-    {
-      "name": null,
-      "designation": null,
-      "email": null,
-      "contact": null,
-      "skills": [],
-      "experience": [],
-      "education": [],
-      "id": 6
-    },
-    {
-      "name": null,
-      "designation": null,
-      "email": null,
-      "contact": null,
-      "skills": [],
-      "experience": [],
-      "education": [],
-      "id": 7
     },
     {
       "name": "Joe Bloggs",

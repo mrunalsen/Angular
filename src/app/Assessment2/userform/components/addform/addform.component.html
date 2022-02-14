@@ -1,0 +1,93 @@
+<!-- Form -->
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form ">
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- Header -->
+        <header>
+            <H1>Add User</H1>
+        </header>
+
+        <!-- Input -->
+        <section class="input-form">
+            <!-- Name -->
+            <div>
+                <label for="firstname">Name</label><br>
+                <input type="text" id="firsttname" name="firstname" formControlName="firstName" class="text-box">
+                <div *ngIf="getvalue['firstName'].touched && getvalue['firstName'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstName'].errors['required']">*Name is required</div>
+                    <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstName'].errors['minlength']">minlength should be 3</div>
+                </div>
+            </div>
+            <!-- Email -->
+            <div>
+                <label for="e-mail">E-mail:</label><br>
+                <input type="text" id="e-mail" formControlName="email" class="text-box">
+
+                <div *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['email'].errors && getvalue['email'].errors['required']">*enter proper format</div>
+                </div>
+            </div>
+            <!-- Mobile -->
+            <div>
+                <label for="contact">Mobile</label><br>
+                <input type="text" id="contact" name="contact" formControlName="contact" class="text-box">
+                <div *ngIf="getvalue['contact'].touched && getvalue['contact'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['contact'].errors && getvalue['contact'].errors['required']">*Mobile number is required</div>
+                </div>
+            </div>
+            <!-- City -->
+            <div>
+                <label for="city">City</label><br>
+                <input type="text" id="city" name="city" formControlName="city" class="text-box">
+            </div>
+            <!-- Gender -->
+            <div class="gender" style="flex-direction: row;">
+                <div class="male">
+                    <input type="radio" id="Male" name="gender" value="Male" formControlName="gender">
+                    <label for="male">Male</label>
+                </div>
+                <div class="female">
+                    <input type="radio" id="female" name="gender" value="female" formControlName="gender">
+                    <label for="female">Female</label>
+                </div>
+
+                <div class="other">
+                    <input type="radio" id="other" name="gender" value="other" formControlName="gender">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+            <!-- Department And Hire Date-->
+            <div class="department">
+                <div>
+                    <label for="department">Department</label> <br>
+                    <select name="department" id="Department" formControlName="department">
+                    <option value="html">HTML</option>
+                    <option value="angular">Angular</option>
+                    <option value="css">CSS</option>
+                </select>
+                    <div *ngIf="getvalue['department'].touched && getvalue['department'].invalid">
+                        <div class="text-danger" *ngIf="getvalue['department'].errors && getvalue['department'].errors['required']">Please select Respective Department</div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <label for="date">Hire Date</label>
+                    <input type="date" id="date" formControlName="date" class="text-box">
+                </div>
+            </div>
+            <!-- Checkbox -->
+            <div>
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <label for="checkbox">Permenant Employee</label>
+            </div>
+            <!-- Buttons -->
+            <div class="btn-section">
+                <button class="btn-add" type="submit" [disabled]="registrationForm.invalid">Add</button>
+                <button class="btn-remove" type="button" (click)="onReset()">Clear</button>
+            </div>
+
+        </section>
+
+    </div>
+</form>

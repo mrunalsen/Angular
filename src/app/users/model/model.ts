@@ -3,13 +3,14 @@ export interface Department{
   name:string;
 }
 
-export interface User{
+export class User{
   id:number;
   firstName:string;
   lastName:string;
   email:string;
   gender:number;
   contact:number;
+  city:string;
   date:Date;
   department:number;
 }

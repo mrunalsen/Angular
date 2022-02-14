@@ -1,0 +1,56 @@
+<div class="content-wrapper">
+    <!-- Header -->
+    <!-- start -->
+    <header>
+        <h1>User List</h1>
+    </header>
+    <!-- end -->
+
+    <!-- Create and Search -->
+    <!-- Create button -->
+    <div class="create">
+        <button routerLink="/userform/addform">Create</button>
+    </div>
+    <!-- Custom Search -->
+    <input type="text" class="search-text" placeholder="Search by Name">
+    <input type="text" class="search-text" placeholder="Search by Department">
+    <input type="text" class="search-text" placeholder="Search by City">
+
+
+    <!-- Main -->
+    <div class="list-container">
+
+        <table>
+            <tr>
+                <th>Full Name</th>
+                <th>E-mail</th>
+                <th>Mobile</th>
+                <th>City</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let user of userData as result ; let i=index">
+
+                <td>{{user.firstName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.contact}}</td>
+                <td>{{user.city}}</td>
+                <td>{{user.department}}</td>
+                <td>
+                    <a routerLink="/userform/edit/{{user.id}}">Edit </a>
+                    <button class="button" (click)="deleteUser(user.id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <!-- Form Array -->
+    <section class="form-array">
+        <h3>Add Address</h3>
+        <div *ngFor="let control of formArray.controls; let i = index">
+            <input type="text" formControlName="control">
+            <button class=".btn-remove" (click)="formArray.removeAt(i)">Remove</button>
+        </div>
+        <button class="btn-add" (click)="addControlToArray()">Add</button>
+    </section>
+</div>

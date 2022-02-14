@@ -5,12 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserformRoutingModule } from './Assessment2/userform/userform-routing.module';
 import { CoreModule } from './core/core.module';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ResumebuilderModule } from './Modules/resumebuilder/resumebuilder.module';
 
 import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
+import { FilterPipe } from './Assessment2/pipes/filter.pipe';
+
 
 
 @NgModule({
@@ -19,6 +22,7 @@ import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
     HighlightDirective,
     DatabindingComponent,
     ToUpperCasePipe,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,8 @@ import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
     ReactiveFormsModule,
     FormsModule,
     ResumebuilderModule,
-    HttpClientModule
+    HttpClientModule,
+    UserformRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
