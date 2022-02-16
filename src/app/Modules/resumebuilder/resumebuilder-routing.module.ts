@@ -7,7 +7,7 @@ import { ResumeviewerComponent } from './resumeviewer/resumeviewer.component';
 const routes: Routes = [
   { path: '',
     children: [
-      {path: '', redirectTo:'viewer',pathMatch:'full'},
+      // {path: '', redirectTo:'viewer',pathMatch:'full'},
     {path: 'editor', component: ResumeeditorComponent},
      { path: 'viewer', component: ResumeviewerComponent},
     ]
