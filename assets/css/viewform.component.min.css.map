@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,AAAC,CACL,KAAK,CAAE,OAAO,CACd,MAAM,CAAE,iBAAiB,CAC5B,AAED,AAAA,WAAW,AAAC,CACR,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,aAAa,CACxB,AAED,AAAA,QAAQ,CACR,WAAW,AAAC,CACR,gBAAgB,CAAE,KAAK,CACvB,MAAM,CAAE,IAAI,CACZ,OAAO,CAAE,SAAS,CAClB,aAAa,CAAE,GAAG,CACrB",
+    "sources": [
+        "../../src/app/Assessment2/userform/components/viewform/viewform.component.scss"
+    ],
+    "names": [],
+    "file": "viewform.component.min.css"
+}

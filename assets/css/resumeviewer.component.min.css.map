@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../src/app/Modules/resumebuilder/resumeviewer/resumeviewer.component.scss"
+    ],
+    "names": [],
+    "file": "resumeviewer.component.min.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../src/app/databinding/databinding.component.scss"
+    ],
+    "names": [],
+    "file": "databinding.component.min.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../src/app/Assessment2/userform/userform.component.scss"
+    ],
+    "names": [],
+    "file": "userform.component.min.css"
+}

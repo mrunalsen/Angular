@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../src/app/Modules/resumebuilder/resumeeditor/resumeeditor.component.scss"
+    ],
+    "names": [],
+    "file": "resumeeditor.component.min.css"
+}
