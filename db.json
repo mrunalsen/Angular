@@ -69,20 +69,20 @@
     {
       "id": 12,
       "firstName": "Kevang",
-      "lastName": "Bloggs",
+      "lastName": "Patel",
       "email": "xyz@zyx.com",
       "contact": "8460849046",
-      "gender": "female",
+      "gender": "Male",
       "date": "2022-02-04",
       "department": "html"
     },
     {
       "id": 13,
       "firstName": "Kevang",
-      "lastName": "Bloggs",
+      "lastName": "Patel",
       "email": "xyz@zyx.com",
       "contact": "8460849046",
-      "gender": "female",
+      "gender": "Male",
       "date": "2022-02-03",
       "department": "angular"
     },

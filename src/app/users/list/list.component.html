@@ -1,6 +1,8 @@
 <div class="list-container">
-    <button type="button" (click)="navigateToForm() ">add</button>
-    <input type="text" class="search-text" [(ngModel)]="searchText">
+    <header class="d-flex space-between">
+        <input type="text" class="search-text" [(ngModel)]="searchText">
+        <button class="btn-add" type="button" (click)="navigateToForm() ">add</button>
+    </header>
     <table>
         <tr>
             <th>Sr No.</th>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import {ServicesService} from '../services/services.service'
-
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
