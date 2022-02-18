@@ -105,6 +105,26 @@
       "gender": "Male",
       "date": "2022-02-18",
       "department": "angular"
+    },
+    {
+      "id": 16,
+      "firstName": "Mehul",
+      "lastName": "Patel",
+      "email": "mehul@patel.com",
+      "contact": "987654321",
+      "gender": "Male",
+      "date": "2022-01-31",
+      "department": "angular"
+    },
+    {
+      "id": 17,
+      "firstName": "Bro",
+      "lastName": "Code",
+      "email": "bro@code.com",
+      "contact": "8989898989",
+      "gender": "female",
+      "date": "2022-02-17",
+      "department": "angular"
     }
   ],
   "resumePost": [
