@@ -10,9 +10,10 @@ import { CoreModule } from './core/core.module';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ResumebuilderModule } from './Modules/resumebuilder/resumebuilder.module';
-
 import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
 import { FilterPipe } from './Assessment2/pipes/filter.pipe';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 
 
 
@@ -32,7 +33,8 @@ import { FilterPipe } from './Assessment2/pipes/filter.pipe';
     FormsModule,
     ResumebuilderModule,
     HttpClientModule,
-    UserformRoutingModule
+    UserformRoutingModule,
+    HttpClientInMemoryWebApiModule
   ],
   providers: [],
   bootstrap: [AppComponent]

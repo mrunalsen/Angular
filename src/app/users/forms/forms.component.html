@@ -1,5 +1,5 @@
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <div class="container">
+    <div class="container content-center align-items-center">
         <!-- <div>
             <label for="firstname">First Name</label>
             <input type="text" id="firstname" name="firstname" placeholder="Enter First Name" formControlName="firstName" class="text-box">
@@ -8,22 +8,23 @@
                 <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstname'].errors['minlength']">minimum length should be 3</div>
             </div>
         </div> -->
-        <div>
-            <label for="firstname">First Name</label>
+       <div class="form content-center align-items-center">
+        <div class="first-name p-20">
+            <label for="firstname">First Name</label><br>
             <input type="text" id="firsttname" name="firstname" placeholder="Enter First Name" formControlName="firstName" class="text-box">
             <div *ngIf="getvalue['firstName'].touched && getvalue['firstName'].invalid">
                 <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstName'].errors['required']">*First name is required</div>
                 <div class="text-danger" *ngIf="getvalue['firstName'].errors && getvalue['firstName'].errors['minlength']">minlength should be 3</div>
             </div>
         </div>
-        <div>
-            <label for="lastname">Last Name</label>
+        <div class="last-name p-20">
+            <label for="lastname">Last Name</label><br>
             <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" formControlName="lastName" class="text-box">
             <div *ngIf="getvalue['lastName'].touched && getvalue['lastName'].invalid">
                 <div class="text-danger" *ngIf="getvalue['lastName'].errors && getvalue['lastName'].errors['required']">*last name is required</div>
             </div>
         </div>
-        <div>
+        <div class="email p-20">
             <label for="e-mail">E-mail:</label><br>
             <input type="text" id="e-mail" placeholder="xyz@gmail.com" formControlName="email" class="text-box">
             <!-- <div *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
@@ -33,30 +34,37 @@
                 <div class="text-danger" *ngIf="getvalue['email'].errors && getvalue['email'].errors['required']">*enter proper format</div>
             </div>
         </div>
-        <div>
+        <div class="contact p-20">
             <label for="contact">Contact no:</label><br>
             <input type="text" id="contact" name="contact" placeholder="+91 0000000000" formControlName="contact" class="text-box">
         </div>
-        <div>
-            <label for="gender">Gender:</label><br>
-            <input type="radio" id="female" name="gender" value="female" formControlName="gender">Female
-            <input type="radio" id="Male" name="gender" value="Male" formControlName="gender">Male
+        <!-- Gender -->
+        <div class="gender">
+            <div class="male">
+                <input type="radio" id="Male" name="gender" value="Male" formControlName="gender">
+                <label for="male">Male</label>
+            </div>
+            <div class="female">
+                <input type="radio" id="female" name="gender" value="female" formControlName="gender">
+                <label for="female">Female</label>
+            </div>
         </div>
-        <div>
-            <label for="date">Date of Employment</label>
+        <div class="date p-20">
+            <label for="date">Date of Employment</label><br>
             <input type="date" id="date" formControlName="date" class="text-box">
         </div>
-        <div>
-            <label for="department">Department</label> <br>
+        <div class="department ">
+            <label for="department">Department</label>
             <select name="department" id="Department" formControlName="department">
                 <option value="html">HTML</option>
                 <option value="angular">Angular</option>
                 <option value="css">CSS</option>
             </select>
         </div>
-        <div>
-            <button class="btn-primary btn" type="submit" [disabled]="registrationForm.invalid">Submit</button>
-            <button class="btn-danger btn mx-3" type="button" (click)="onReset()">Reset</button>
+        <div class="btn-section">
+            <button class="btn-add" type="submit" [disabled]="registrationForm.invalid">Submit</button>
+            <button class="btn-remove" type="button" (click)="onReset()">Reset</button>
         </div>
+       </div>
     </div>
 </form>

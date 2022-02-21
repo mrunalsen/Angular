@@ -1,6 +1,6 @@
-<button><a routerLink="/resume/viewer" >Resumes</a></button>
+<button class="btn-add"><a routerLink="/resume/viewer" >Resume</a></button>
 <form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
-    <div>
+    <div class="container content-center align-items-center" >
         <label for="name">Name</label>
         <input type="text" id="name" placeholder="Enter full name" formControlName="name">
         <div *ngIf="getvalue['name'].touched && getvalue['name'].invalid">

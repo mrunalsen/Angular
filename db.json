@@ -23,16 +23,46 @@
       "gender": "Male",
       "date": "2022-02-19",
       "department": "css"
+    },
+    {
+      "id": 2,
+      "firstName": "Henal",
+      "email": "henalpatel@1rivet.com",
+      "contact": "9909368185",
+      "city": "Valsad",
+      "gender": "Male",
+      "date": "2022-02-16",
+      "department": "angular"
+    },
+    {
+      "id": 3,
+      "firstName": "Kevang",
+      "email": "email@email.com",
+      "contact": "2483650000",
+      "city": "Valsad",
+      "gender": "Male",
+      "date": "2022-02-11",
+      "department": "angular"
+    },
+    {
+      "id": 4,
+      "firstName": "Ravi",
+      "email": "ravi@email.com",
+      "contact": "1234567890",
+      "city": "Valsad",
+      "gender": "Male",
+      "date": "2022-02-15",
+      "department": "css"
     }
   ],
   "form": [
     {
       "id": 6,
-      "firstName": "Ayushi",
-      "lastName": "Parmar",
-      "email": "parmarayushi@1rivet.com",
+      "firstName": "Henal",
+      "lastName": "Patel",
+      "email": "henalpatel@1rivet.com",
       "contact": "1234567890",
-      "gender": "female",
+      "gender": "Male",
       "date": "2022-02-10",
       "department": "angular"
     },

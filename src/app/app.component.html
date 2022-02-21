@@ -36,13 +36,15 @@
 <h3>Date:<span>{{ currentdate | date:'dd/mm/yyyy'}} Time:{{currentdate | date:'hh:mm:ss'}}</span></h3> -->
 
 
-<div class="d-flex  h-100">
-    <app-sidebar></app-sidebar>
-    <section class="content-wrapper">
+<div class="d-flex wrapper">
+    <!-- primaryNav -->
+    <input type="checkbox" id="primaryNav" >
+    <!-- <div class="side f-direct"> -->
+        <!-- <label for="bar">X</label> -->
+        <app-sidebar></app-sidebar>
+    <!-- </div> -->
+    <section class="outlet" id="main-body">
         <router-outlet>
         </router-outlet>
-
     </section>
-
-
 </div>

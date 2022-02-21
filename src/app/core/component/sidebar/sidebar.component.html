@@ -1,64 +1,68 @@
 <aside class="d-flex h-100">
     <div class="project">
-        <a class="d-flex align-items-center title" href="#">
+
+        <label for="primaryNav">
             <span class="icon icon-grid"></span>
-            <span><h2>Projects</h2></span>
+        </label>
+        <a class="d-flex flex-grow-1 content-center align-items-center title" href="#">
+            <h2 class="nav-text">Menu</h2>
         </a>
+
     </div>
     <!-- Profile -->
     <!-- <figure>
         <img src="assets/img/photo_2022-02-17_00-31-37.jpg" alt="Profile Picture">
     </figure> -->
-    <nav class="overflow-auto">
-        <ul class="nav-1">
+    <nav class="overflow-vertical" id="sidebarMenu">
+        <ul class="nav-1 sidebarMenu">
             <li>
                 <a class="d-flex align-items-center" routerLink="userform/viewform">
                     <span class="icon icon-compare_arrows"></span>
-                    <span>Assessment</span>
+                    <span class="nav-text">Assessment</span>
                 </a>
             </li>
             <li>
                 <a class="d-flex align-items-center" routerLink="users/users-list">
                     <span class="icon icon-dot-circle-o"></span>
-                    <span>Users</span>
+                    <span class="nav-text">Users</span>
                 </a>
             </li>
             <li>
                 <a class="d-flex align-items-center" routerLink="/viewer">
                     <span class="icon icon-calendar"></span>
-                    <span>Resume Builder</span>
+                    <span class="nav-text">Resume Builder</span>
                 </a>
             </li>
         </ul>
-        <ul class="nav-2">
+        <ul class="nav-2 sidebarMenu">
             <li>
                 <a class="d-flex align-items-center" href="#">
                     <span class="icon icon-user"></span>
-                    <span>Account</span>
+                    <span class="nav-text">Account</span>
                 </a>
             </li>
             <li>
                 <a class="d-flex align-items-center" href="#">
                     <span class="icon icon-question"></span>
-                    <span>FAQ</span>
+                    <span class="nav-text">FAQ</span>
                 </a>
             </li>
             <li>
                 <a class="d-flex align-items-center" href="#">
                     <span class="icon icon-cart"></span>
-                    <span>Product</span>
+                    <span class="nav-text">Product</span>
                 </a>
             </li>
             <li>
                 <a class="d-flex align-items-center" href="#">
                     <span class="icon icon-shield"></span>
-                    <span>Security</span>
+                    <span class="nav-text">Security</span>
                 </a>
             </li>
             <li>
                 <a class="d-flex align-items-center" href="#">
                     <span class="icon icon-enter"></span>
-                    <span>Log Out</span>
+                    <span class="nav-text">Log Out</span>
                 </a>
             </li>
         </ul>
