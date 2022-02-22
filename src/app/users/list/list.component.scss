@@ -5,9 +5,9 @@
     overflow: auto;
 }
 .list-container {
-   max-width: 1200px;
-    width: 100%;
-    margin: auto;
+    // max-width: 1200px;
+    width: 96%;
+    margin: 0 auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
     flex-direction: column;
@@ -43,6 +43,9 @@ th, td {
 }
 .action {
     text-align: center;
+}
+.sr-no {
+    color: black;
 }
 // Header
 header {
@@ -104,4 +107,32 @@ td a {
     border-radius: 4px;
     padding: 4px;
     margin-left: 36px ;
+}
+
+
+// Media Queries
+// Smart Phones
+@media (max-width: 768px) {
+    .content-wrapper {
+        margin: 0 auto;
+    }
+    .list-container {
+        max-width: 768px;
+        overflow-x: scroll;
+        margin: 0 auto;
+        width: 80%;
+    }
+    .table {
+        overflow-x: scroll;
+    }
+}
+@media (max-width:390px) {
+    .content-wrapper {
+        margin: 0 auto;
+    }
+    .list-container {
+        margin: 0 auto;
+        width: 80%;
+        max-width: 390px;
+    }
 }

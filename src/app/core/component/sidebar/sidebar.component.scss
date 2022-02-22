@@ -64,7 +64,12 @@ figure img {
     width: 40px;
     border-radius: 50%;
 }
-
+figure {
+    padding: 16px;
+}
+legend {
+    padding-left: 20px;
+}
 // ICONS
 .icon {
     font-size: 20px;
@@ -116,3 +121,13 @@ nav a span {
 //     flex: 0 0 50px;
 //     transform: translateX(-150px);
 // }
+@media (max-width: 390px) {
+    aside {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    aside {
+        display: none;
+    }
+}
