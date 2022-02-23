@@ -76,7 +76,8 @@ legend {
 }
 
 .icon-grid {
-    padding-left: 8px;
+    padding-left: 4px;
+    cursor: pointer;
 }
 
 
@@ -106,28 +107,10 @@ nav a span {
     flex-grow: 1;
     border: 1px solid #ccc;
 }
-
-// .card {
-//     background-color: tomato;
-//     width: 100%;
-//     height: 400px;
-//     margin: 1rem;
-// }
-
-// #lol:checked ~ aside ul li a span, #lol:checked ~ aside h1{
-//     transform: translateX(-150px);
-// }
-// #lol:checked ~ aside{
-//     flex: 0 0 50px;
-//     transform: translateX(-150px);
-// }
-@media (max-width: 390px) {
-    aside {
-        display: none;
-    }
-}
-@media (max-width: 768px) {
-    aside {
-        display: none;
+::-webkit-scrollbar{
+    width: 5px;
+    &-thumb{
+        background-color: black;
+        border-radius: 20px;
     }
 }

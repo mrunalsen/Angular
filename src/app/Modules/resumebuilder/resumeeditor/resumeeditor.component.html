@@ -1,80 +1,82 @@
 <button class="btn-add"><a routerLink="/resume/viewer" >Resume</a></button>
-<form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
-    <div class="container content-center align-items-center" >
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Enter full name" formControlName="name">
-        <div *ngIf="getvalue['name'].touched && getvalue['name'].invalid">
-            <div class="text-danger" *ngIf="getvalue['name'].errors && getvalue['name'].errors['required']">*First name is required</div>
-            <div class="text-danger" *ngIf="getvalue['name'].errors && getvalue['name'].errors['minlength']">minlength should be 3</div>
-
-        </div>
-        <div>
-            <label for="designation">Designation</label>
-            <input type="text" id="designation" formControlName="designation">
-            <div *ngIf="getvalue['designation'].touched && getvalue['designation'].invalid">
-                <div class="text-danger" *ngIf="getvalue['designation'].errors && getvalue['designation'].errors['required']">*required</div>
+<div class="container">
+    <form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+        <div class="input-form content-center align-items-center" >
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter full name" formControlName="name" class="text-box">
+            <div *ngIf="getvalue['name'].touched && getvalue['name'].invalid">
+                <div class="text-danger" *ngIf="getvalue['name'].errors && getvalue['name'].errors['required']">*First name is required</div>
+                <div class="text-danger" *ngIf="getvalue['name'].errors && getvalue['name'].errors['minlength']">minlength should be 3</div>
+    
             </div>
-        </div>
-        <div>
-            <label for="e-mail">E-mail:</label><br>
-            <input type="text" id="e-mail" placeholder="xyz@gmail.com" formControlName="email" class="text-box">
-            <div *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
-                <div class="text-danger" *ngIf="getvalue['email'].errors && getvalue['email'].errors['required']">*required</div>
-            </div>
-        </div>
-        <div formArrayName="skills">
-            <label for="skills">Skills</label>
-            <div *ngIf="getvalue['skills'].touched && getvalue['skills'].invalid">
-                <div class="text-danger" *ngIf="getvalue['skills'].errors && getvalue['skills'].errors['required']">*required</div>
-            </div>
-            <div *ngFor="let control of skills.controls; let i = index" [formGroupName]="i">
-                <input type="text" id="skills" formControlName="skills">
-                <button (click)="skills.removeAt(i)">Delete</button>
-            </div>
-            <button type="button" (click)="addSkills()"><i>+</i> Add Technical Skills</button>
-        </div>
-        <div>
-            <div formArrayName="experience">
-                <div>
-                    <label for="experience">Experience</label>
-                    <div *ngIf="getvalue['skills'].touched && getvalue['skills'].invalid">
-                        <div class="text-danger" *ngIf="getvalue['skills'].errors && getvalue['skills'].errors['required']">*required</div>
-                    </div>
-                    <div *ngFor="let control of experience.controls; let i = index" [formGroupName]="i">
-                        <input type="text" id="place" placeholder="place" formControlName="place">
-                        <input type="text" id="designation" placeholder="designation" formControlName="designation">
-                        <input type="text" id="description" placeholder="description" formControlName="description">
-                        <input type="text" id="year" placeholder="year" formControlName="year">
-                        <button type="button" (click)="experience.removeAt(i)"> remove experience</button>
-                    </div>
-                    <button type="button" (click)="addExperience()">add experience</button>
+            <div>
+                <label for="designation">Designation</label>
+                <input type="text" id="designation" formControlName="designation" class="text-box" placeholder="Designation">
+                <div *ngIf="getvalue['designation'].touched && getvalue['designation'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['designation'].errors && getvalue['designation'].errors['required']">*required</div>
                 </div>
             </div>
-        </div>
-        <div formArrayName="education">
-            <label for="education">Education</label>
-
-            <div *ngIf="getvalue['education'].touched && getvalue['education'].invalid">
-                <div class="text-danger" *ngIf="getvalue['education'].errors && getvalue['education'].errors['required']">*required</div>
+            <div>
+                <label for="e-mail">E-mail:</label><br>
+                <input type="text" id="e-mail" placeholder="xyz@gmail.com" formControlName="email" class="text-box">
+                <div *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['email'].errors && getvalue['email'].errors['required']">*required</div>
+                </div>
             </div>
-            <div *ngFor="let control of education.controls; let i = index" [formGroupName]="i">
-                <input type="text" id="school" formControlName="school">
-                <input type="text" id="degree" formControlName="degree">
-                <input type="text" id="score" formControlName="score">
-                <button (click)="education.removeAt(i)">Delete</button>
+            <div formArrayName="skills">
+                <label for="skills">Skills</label>
+                <div *ngIf="getvalue['skills'].touched && getvalue['skills'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['skills'].errors && getvalue['skills'].errors['required']">*required</div>
+                </div>
+                <div *ngFor="let control of skills.controls; let i = index" [formGroupName]="i">
+                    <input type="text" id="skills" formControlName="skills">
+                    <button (click)="skills.removeAt(i)">Delete</button>
+                </div>
+                <button type="button" (click)="addSkills()"><i>+</i> Add Technical Skills</button>
             </div>
-            <button type="button" (click)="addEducation()"><i>+</i>Add Education</button>
-        </div>
-        <div>
-            <label for="contact">Contact No:</label>
-            <input type="tel" id="contact" formControlName="contact">
-            <div *ngIf="getvalue['contact'].touched && getvalue['contact'].invalid">
-                <div class="text-danger" *ngIf="getvalue['contact'].errors && getvalue['contact'].errors['required']">*required</div>
+            <div>
+                <div formArrayName="experience">
+                    <div>
+                        <label for="experience">Experience</label>
+                        <div *ngIf="getvalue['skills'].touched && getvalue['skills'].invalid">
+                            <div class="text-danger" *ngIf="getvalue['skills'].errors && getvalue['skills'].errors['required']">*required</div>
+                        </div>
+                        <div *ngFor="let control of experience.controls; let i = index" [formGroupName]="i">
+                            <input type="text" id="place" placeholder="place" formControlName="place">
+                            <input type="text" id="designation" placeholder="designation" formControlName="designation">
+                            <input type="text" id="description" placeholder="description" formControlName="description">
+                            <input type="text" id="year" placeholder="year" formControlName="year">
+                            <button type="button" (click)="experience.removeAt(i)"> remove experience</button>
+                        </div>
+                        <button type="button" (click)="addExperience()">add experience</button>
+                    </div>
+                </div>
+            </div>
+            <div formArrayName="education">
+                <label for="education">Education</label>
+    
+                <div *ngIf="getvalue['education'].touched && getvalue['education'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['education'].errors && getvalue['education'].errors['required']">*required</div>
+                </div>
+                <div *ngFor="let control of education.controls; let i = index" [formGroupName]="i">
+                    <input type="text" id="school" formControlName="school">
+                    <input type="text" id="degree" formControlName="degree">
+                    <input type="text" id="score" formControlName="score">
+                    <button (click)="education.removeAt(i)">Delete</button>
+                </div>
+                <button type="button" (click)="addEducation()"><i>+</i>Add Education</button>
+            </div>
+            <div>
+                <label for="contact">Contact No:</label>
+                <input type="tel" id="contact" formControlName="contact">
+                <div *ngIf="getvalue['contact'].touched && getvalue['contact'].invalid">
+                    <div class="text-danger" *ngIf="getvalue['contact'].errors && getvalue['contact'].errors['required']">*required</div>
+                </div>
+            </div>
+            <div>
+                <button class="btn-primary btn" type="submit" [disabled]="resumeForm.invalid">Submit</button>
+                <button class="btn-danger btn mx-3" (click)="onReset()">Reset</button>
             </div>
         </div>
-        <div>
-            <button class="btn-primary btn" type="submit" [disabled]="resumeForm.invalid">Submit</button>
-            <button class="btn-danger btn mx-3" (click)="onReset()">Reset</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>

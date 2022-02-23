@@ -54,6 +54,14 @@ header {
 h1 {
     margin-bottom: 20px;
 }
+// Hamburger-menu
+.menu .icon{
+    font-size: 30px;
+}
+.menu {
+    background-color: #f7f8fa;
+    padding: 20px 0 0 20px;
+}
 // SEARCH
 .search-box {
     position: relative;
@@ -111,7 +119,12 @@ td a {
 
 
 // Media Queries
-// Smart Phones
+// Tablets
+@media (min-width:1100px){
+    .menu {
+        display: none;
+    }
+}
 @media (max-width: 768px) {
     .content-wrapper {
         margin: 0 auto;
@@ -125,8 +138,10 @@ td a {
     .table {
         overflow-x: scroll;
     }
+    
 }
-@media (max-width:390px) {
+// Smartphones
+@media (max-width:576px) {
     .content-wrapper {
         margin: 0 auto;
     }
@@ -135,4 +150,17 @@ td a {
         width: 80%;
         max-width: 390px;
     }
+    
+    .head-text {
+        flex-direction: column;
+    }
+    .btn-add, .search-text {
+        width: 100%;
+    }
+    .btn-add {
+        height: 40px;
+        margin-top: 8px;
+    }
+
+   
 }

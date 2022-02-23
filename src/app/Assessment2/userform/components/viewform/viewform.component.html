@@ -21,7 +21,7 @@
     <div class="list-container">
 
         <table>
-            <tr>
+            <tr >
                 <th>Full Name</th>
                 <th>E-mail</th>
                 <th>Mobile</th>
@@ -29,7 +29,7 @@
                 <th>Department</th>
                 <th>Action</th>
             </tr>
-            <tr *ngFor="let user of userData as result ; let i=index">
+            <tr class="t-title" *ngFor="let user of userData as result ; let i=index">
 
                 <td>{{user.firstName}}</td>
                 <td>{{user.email}}</td>

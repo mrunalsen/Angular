@@ -6,3 +6,20 @@
     color: #64a2fe;
     border: 1px solid #62a1fe;
 }
+// Main 
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input-form {
+    width: 600px;
+}
+
+.input-form .text-box {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 184, 184);
+}
