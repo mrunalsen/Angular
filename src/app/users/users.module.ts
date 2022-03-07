@@ -9,6 +9,7 @@ import { ServicesService } from './services/services.service';
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { FormModalComponent } from './form-modal/form-modal.component';
 
 
 
@@ -18,7 +19,8 @@ import { SearchPipe } from './pipes/search.pipe';
     UsersComponent,
     FormsComponent,
     ListComponent,
-    SearchPipe
+    SearchPipe,
+    FormModalComponent
   ],
   imports: [
     CommonModule,

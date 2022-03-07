@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, } from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { User } from '../model/model';
+import { Department, User } from '../model/model';
 
 @Injectable({
   providedIn: 'root'
@@ -35,4 +35,8 @@ export class ServicesService {
   deleteUser(id: number): Observable<number> {
     return this.http.delete<number>(`${this.apiLink}/form/${id}`);
   }
+  getDepartment(): Observable<Department[]> {
+    return this.http.get<Department[]>(`${this.apiLink}/department`);
+  }
+
 }

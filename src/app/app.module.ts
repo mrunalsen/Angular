@@ -15,6 +15,8 @@ import { FilterPipe } from './Assessment2/pipes/filter.pipe';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TrialModule } from './trial/trial.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeletePopupComponent } from './shared/delete-popup/delete-popup.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 
@@ -26,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DatabindingComponent,
     ToUpperCasePipe,
     FilterPipe,
+    DeletePopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientInMemoryWebApiModule,
     TrialModule,
     BrowserAnimationsModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]

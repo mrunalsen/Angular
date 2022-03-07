@@ -12,7 +12,7 @@
                     <span class="icon icon-search1"></span>
                     <input type="text" class="search-text" placeholder="Search for Users" [(ngModel)]="searchText">
                 </div>
-                <button class="btn-add" type="button" (click)="navigateToForm() ">+ Add</button>
+                <button class="btn-add" type="button" (click)="openFormModel() ">+ Add</button>
             </div>
         </header>
         <div class="table">
@@ -37,9 +37,9 @@
                     <td>{{user.date | date: 'MM/dd/yyyy'}}</td>
                     <td>{{user.department}}</td>
                     <td class="d-flex content-center" >
-                        <a routerLink="/users/edit/{{user.id}}">Edit
-                    </a>
-                        <button class="button" (click)="deleteUser(user.id)">Delete</button>
+                        <button (click)="editUser(user.id)">Edit
+                    </button>
+                        <button class="button" (click)="deletePopUp(user.id)">Delete</button>
                     </td>
         
         

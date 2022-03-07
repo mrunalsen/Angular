@@ -1,2 +1,2 @@
-tr,th,td{border-collapse:collapse;border:1px solid black;text-align:center}.content-wrapper{width:100%}
+.wrapper{height:100%;border:2px solid black}.wrapper .outlet{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}#main-body{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}
 /*# sourceMappingURL=app.component.min.css.map */

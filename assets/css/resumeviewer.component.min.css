@@ -1,1 +1,2 @@
-/* No CSS *//*# sourceMappingURL=resumeviewer.component.min.css.map */
+section{margin:20px auto;max-width:900px;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex}.resume-viewer{display:-webkit-box;display:-ms-flexbox;display:flex;border-top:2px solid black;border-bottom:2px solid black;padding:0px 50px;background-color:#e6e6e6;height:640px}table{width:100%}.profile{width:200px;vertical-align:top}.skills{width:200px;vertical-align:top;padding-top:40px}.skills-td{vertical-align:top;width:25%;padding-right:10px}.btn-add{background-color:white;margin:10px;padding:10px 20px;border-radius:5px;color:#64a2fe;border:1px solid #62a1fe}
+/*# sourceMappingURL=resumeviewer.component.min.css.map */

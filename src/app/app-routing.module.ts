@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'resume', loadChildren: () => import('./Modules/resumebuilder/resumebuilder.module').then(m => m.ResumebuilderModule) },
   { path: 'userform', loadChildren: () => import('./Assessment2/userform/userform.module').then(m => m.UserformModule) },
   { path: 'trial', loadChildren: () => import('./trial/trial.module').then(m => m.TrialModule) },
+  { path: 'todo', loadChildren: () => import('./Modules/todo/todo.module').then(m => m.TodoModule) },
   
 
 ];
