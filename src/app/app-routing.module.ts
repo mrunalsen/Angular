@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:'forms', component: FormsComponent},
   { path: 'resume', loadChildren: () => import('./Modules/resumebuilder/resumebuilder.module').then(m => m.ResumebuilderModule) },
   { path: 'userform', loadChildren: () => import('./Assessment2/userform/userform.module').then(m => m.UserformModule) },
+  { path: 'trial', loadChildren: () => import('./trial/trial.module').then(m => m.TrialModule) },
   
 
 ];

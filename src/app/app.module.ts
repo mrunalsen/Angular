@@ -13,6 +13,8 @@ import { ResumebuilderModule } from './Modules/resumebuilder/resumebuilder.modul
 import { ToUpperCasePipe } from './toUpperCase/to-upper-case.pipe';
 import { FilterPipe } from './Assessment2/pipes/filter.pipe';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { TrialModule } from './trial/trial.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -34,7 +36,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     ResumebuilderModule,
     HttpClientModule,
     UserformRoutingModule,
-    HttpClientInMemoryWebApiModule
+    HttpClientInMemoryWebApiModule,
+    TrialModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
