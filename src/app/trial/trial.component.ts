@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { fromEvent, interval, timer, zip } from 'rxjs';
 import { combineLatest} from 'rxjs/internal/observable/combineLatest';
 import { buffer, bufferTime, filter, min, pairwise, take, throttleTime } from 'rxjs/operators';
@@ -12,10 +12,19 @@ import { debounceTime, map } from 'rxjs/operators';
   styleUrls: ['./trial.component.scss']
 })
 export class TrialComponent implements OnInit {
+  @Input() name: string;
 
+  @ViewChild('templateRef')
+  public templateref: TemplateRef<any>;
+
+  ngAfterViewChecked() {
+    console.log(this.templateref.elementRef)
+}
   constructor() { }
 
   ngOnInit(): void {
+
+    
 
   // Combine Latest  & interval
 

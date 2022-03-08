@@ -29,9 +29,9 @@ export class FormsComponent implements OnInit {
     }
     
   }
-  navigateToList() {
-    this.router.navigate(['/users/users-list']);
-  }
+  // navigateToList() {
+  //   this.router.navigate(['/users/users-list']);
+  // }
   onReset() {
     this.registrationForm.reset()
   }

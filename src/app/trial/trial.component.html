@@ -1,2 +1,9 @@
+<app-hello name="{{name}}"></app-hello>
+<ng-template #templateRef let-cellvalues="cellvalue" let-rowvalue="rowvalue">
+  {{ cellvalues}}
+</ng-template>
 
-<input type="text" id="search" />
+<ng-container >
+   <ng-template *ngTemplateOutlet="templateRef;context:{cellvalue :25}">
+   </ng-template>
+</ng-container>

@@ -115,6 +115,7 @@ export class ListComponent implements OnInit {
   openFormModel(id?: number) {
     //config of overlay
     let config = new OverlayConfig();
+    config.hasBackdrop = true
     config.positionStrategy = this.overlay.position().global().right();
 
     const overlayRef = this.overlay.create(config);
@@ -129,6 +130,7 @@ export class ListComponent implements OnInit {
       componentRef.instance.userData.subscribe((result) => {
         overlayRef.detach();
         this.updateUser(id, result);
+        
       });
     } else {
       componentRef.instance.userData.subscribe((result) => {
@@ -137,6 +139,7 @@ export class ListComponent implements OnInit {
       });
     }
     componentRef.instance.cancel.subscribe(() => overlayRef.detach());
+    
   }
 
   deletePopUp(id: number) {
