@@ -37,7 +37,7 @@
                     <td>{{user.date | date: 'MM/dd/yyyy'}}</td>
                     <td>{{user.department}}</td>
                     <td class="d-flex content-center" >
-                        <button (click)="editUser(user.id)">Edit
+                        <button class="btn btn-edit d-flex justify-content-center align-items-center" (click)="editUser(user.id)">Edit
                     </button>
                         <button class="button" (click)="deletePopUp(user.id)">Delete</button>
                     </td>
