@@ -17,6 +17,7 @@ import { TrialModule } from './trial/trial.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeletePopupComponent } from './shared/delete-popup/delete-popup.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { BindService } from './Modules/bind/bind.service';
 
 
 
@@ -44,7 +45,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     BrowserAnimationsModule,
     OverlayModule
   ],
-  providers: [],
+  providers: [BindService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
