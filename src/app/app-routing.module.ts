@@ -20,6 +20,8 @@ const routes: Routes = [
   { path: 'todo', loadChildren: () => import('./Modules/todo/todo.module').then(m => m.TodoModule) },
   
   { path: 'mentor', loadChildren: () => import('./Modules/mentor/mentor.module').then(m => m.MentorModule) },
+  
+  { path: 'bind', loadChildren: () => import('./Modules/bind/bind.module').then(m => m.BindModule) },
 
 ];
 

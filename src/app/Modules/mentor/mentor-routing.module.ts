@@ -18,7 +18,7 @@ const routes: Routes = [
       },
       {
         path: 'edit/:id',
-        component: MentorListContainerComponent
+        component: MentorFormContainerComponent
       },
       {
         path:'',

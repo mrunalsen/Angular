@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Mentor } from '../../mentor.model';
 import { MentorListPresenterService } from '../mentor-list-presenter/mentor-list-presenter.service';
@@ -6,11 +6,15 @@ import { MentorListPresenterService } from '../mentor-list-presenter/mentor-list
 @Component({
   selector: 'app-mentor-list-presentation',
   templateUrl: './mentor-list-presentation.component.html',
-  styleUrls: ['./mentor-list-presentation.component.scss']
+  styleUrls: ['./mentor-list-presentation.component.scss'],
+  viewProviders:[MentorListPresenterService],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class MentorListPresentationComponent implements OnInit {
  @Input() public set mentorList(value: Mentor[] | null) {
    if (value) {
+     console.log(value);
+     
      this._mentorList = value;
    }
  }
@@ -29,9 +33,13 @@ export class MentorListPresentationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
   onDelete(id: number) {
+    // alert("Delete Success")
     this.mentorListPresenter.onDelete(id);
+    this.delete.emit(id);
+    this.mentorList
   }
 
   onEdit(id: number) {

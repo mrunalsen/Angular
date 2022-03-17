@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
-import { MentorForm } from '../../mentor.model';
+import { Mentor, MentorForm } from '../../mentor.model';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MentorFormPresenterService {
- private mentorFormData: Subject<MentorForm>
- public mentorFormData$: Observable<MentorForm>
+ private mentorFormData: Subject<Mentor>
+ public mentorFormData$: Observable<Mentor>
   constructor(
     private fb: FormBuilder
   ) { 

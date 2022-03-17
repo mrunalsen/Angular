@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Mentor, MentorForm } from '../../mentor.model';
 import { Location } from '@angular/common';
@@ -9,11 +9,13 @@ import { MentorFormPresenterService } from '../mentor-form-presenter/mentor-form
 @Component({
   selector: 'app-mentor-form-presentation',
   templateUrl: './mentor-form-presentation.component.html',
-  styleUrls: ['./mentor-form-presentation.component.scss']
+  styleUrls: ['./mentor-form-presentation.component.scss'],
+  viewProviders:[MentorFormPresenterService],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class MentorFormPresentationComponent implements OnInit {
 
-  @Input() public set mentorsData(value: Mentor | null) {
+  @Input() public set mentorData(value: Mentor | null) {
     if (value) {
       console.log(value)
       this.formTitle ='Edit Mentor';
@@ -28,8 +30,8 @@ export class MentorFormPresentationComponent implements OnInit {
   }
   private _mentorData!: Mentor
 
-  @Output() public add: EventEmitter<MentorForm>
-  @Output() public edit: EventEmitter<MentorForm>
+  @Output() add: EventEmitter<Mentor>
+  @Output() edit: EventEmitter<MentorForm>
 
   public mentorForm: FormGroup;
   public formTitle: string;
@@ -45,13 +47,16 @@ export class MentorFormPresentationComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.mentorFormpresenter.mentorFormData$.subscribe((res: MentorForm) => {
+    this.mentorFormpresenter.mentorFormData$.subscribe((res: Mentor) => {
+      console.log('ok', res);
+      // debugger
+      // this.add.emit(res);
       this.formTitle === 'Add Mentor' ? this.add.emit(res) : this.edit.emit(res); 
     })
   }
 
   onSubmit() {
-    this.mentorFormpresenter.onSubmit(this.mentorForm)
+  this.mentorFormpresenter.onSubmit(this.mentorForm)
   }
   onCancel() {
     this.location.back();

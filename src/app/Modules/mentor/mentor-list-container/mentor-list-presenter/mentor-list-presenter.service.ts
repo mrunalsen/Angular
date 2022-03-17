@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { observable, Observable, Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MentorListPresenterService {
 private delete: Subject<number>;
 private delete$: Observable<number>;
