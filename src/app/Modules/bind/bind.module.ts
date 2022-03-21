@@ -5,6 +5,7 @@ import { BindRoutingModule } from './bind-routing.module';
 import { BindComponent } from './bind.component';
 import { BindFormComponent } from './bind-form/bind-form.component';
 import { BindListComponent } from './bind-list/bind-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BindListComponent } from './bind-list/bind-list.component';
   ],
   imports: [
     CommonModule,
-    BindRoutingModule
+    BindRoutingModule,
+    ReactiveFormsModule
   ],
 })
 export class BindModule { }

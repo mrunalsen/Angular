@@ -5,7 +5,7 @@ import { BindComponent } from './bind.component';
 const routes: Routes = [{ path: '', component: BindComponent }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),],
   exports: [RouterModule]
 })
 export class BindRoutingModule { }

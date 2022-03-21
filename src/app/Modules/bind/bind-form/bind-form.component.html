@@ -1,16 +1,16 @@
 <div class="container-fluid mb-5">
-    <form class="needs-validation" novalidate>
+    <form [formGroup]="addFormData" class="needs-validation" novalidate>
         <div class="form-row">
           <div class="col-md-4 mb-3">
-            <label for="validationCustom01">First name {{user}}</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="First name" value="Mark" required formControlName="firstName">
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationCustom02">Last name</label>
-            <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required formControlName="lastName">
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -20,28 +20,28 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationCustom03">City</label>
-            <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+            <input type="text" class="form-control" id="validationCustom03" placeholder="City" required formControlName="city">
             <div class="invalid-feedback">
               Please provide a valid city.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="validationCustom04">State</label>
-            <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+            <input type="text" class="form-control" id="validationCustom04" placeholder="State" required formControlName="state">
             <div class="invalid-feedback">
               Please provide a valid state.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="validationCustom05">Zip</label>
-            <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+            <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required formControlName="zip">
             <div class="invalid-feedback">
               Please provide a valid zip.
             </div>
           </div>
         </div>
       
-        <button class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary" type="submit" (click)="addForm()">Submit form</button>
       </form>
       
       <script>
