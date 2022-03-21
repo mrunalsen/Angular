@@ -17,8 +17,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="align-middle" *ngFor="let item of mentorList">
-        <td>{{ item.id }}</td>
+      <tr class="align-middle" *ngFor="let item of mentorList; let i = index">
+        <th class="sr-no" scope="row">{{i+1}}</th>
         <td>{{ item.name }}</td>
         <td>{{ item.age }}</td>
         <td>{{ item.gender }}</td>

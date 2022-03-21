@@ -16,9 +16,6 @@ export class MentorService {
     this.apiLink = environment.baseURL;
   }
 
-  // public getMentor(): Observable<Mentor[]> {
-  //   return this.http.get<Mentor[]>('http://localhost:3000/mentor')
-  // }
   public getMentor(): Observable<Mentor[]> {
     return this.http.get<Mentor[]>(`${this.apiLink}/mentor`)
   }
@@ -28,14 +25,14 @@ export class MentorService {
   }
 
   public getMentorById(id:string): Observable<Mentor> {
-    return this.http.get<Mentor>(`http://localhost:3000/mentor/${id}`);
+    return this.http.get<Mentor>(`${this.apiLink}/mentor/${id}`);
   }
 
   public editMentor(form: any, id: string) : any {
-    return this.http.put<any>(`http://localhost:3000/mentor/${id}`,form)
+    return this.http.put<any>(`${this.apiLink}/mentor/${id}`,form)
   }
 
   public deleteMentor(id:number): any {
-    return this.http.delete<any>(`http://localhost:3000/mentor/${id}`)
+    return this.http.delete<any>(`${this.apiLink}/mentor/${id}`)
   }
 }

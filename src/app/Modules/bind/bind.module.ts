@@ -6,6 +6,7 @@ import { BindComponent } from './bind.component';
 import { BindFormComponent } from './bind-form/bind-form.component';
 import { BindListComponent } from './bind-list/bind-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BindService } from './bind.service';
 
 
 @NgModule({
@@ -17,7 +18,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     BindRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
+  providers:[
+    BindService
+  ]
 })
 export class BindModule { }
