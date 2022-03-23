@@ -6,7 +6,7 @@ import { ResumebuilderComponent } from './resumebuilder.component';
 import { ResumeviewerComponent } from './resumeviewer/resumeviewer.component';
 import { ResumeeditorComponent } from './resumeeditor/resumeeditor.component';
 import { Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     ResumebuilderRoutingModule,
-    ReactiveFormsModule
+    SharedModule
   ]
 })
 export class ResumebuilderModule { }

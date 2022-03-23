@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { MentorFormContainerComponent } from './mentor-form-container/mentor-form-container.component';
 import { MentorFormPresentationComponent } from './mentor-form-container/mentor-form-presentation/mentor-form-presentation.component';
 import { MentorListContainerComponent } from './mentor-list-container/mentor-list-container.component';
@@ -23,7 +23,7 @@ import { MentorService } from './mentor.service';
   imports: [
     CommonModule,
     MentorRoutingModule,
-    ReactiveFormsModule,
+    SharedModule,
     HttpClientModule
   ],
   providers: [

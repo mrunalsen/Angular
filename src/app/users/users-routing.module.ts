@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '', component: UsersComponent,
     children: [
       {
-        path: '',pathMatch:'full'
+        path: '',pathMatch:'full',redirectTo:'users-list'
       },
       {
         path: 'users-form', component: FormsComponent

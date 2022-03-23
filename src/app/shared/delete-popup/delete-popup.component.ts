@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-delete-popup',
@@ -7,6 +8,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class DeletePopupComponent implements OnInit {
   @Output() value: EventEmitter<boolean>;
+
+  khaliEmJ: FormGroup = new FormGroup({});
 
   constructor() {
     this.value = new EventEmitter<boolean>();

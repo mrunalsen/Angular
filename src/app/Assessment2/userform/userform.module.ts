@@ -5,7 +5,7 @@ import { UserformRoutingModule } from './userform-routing.module';
 import { UserformComponent } from './userform.component';
 import { ViewformComponent } from './components/viewform/viewform.component';
 import { AddformComponent } from './components/addform/addform.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     UserformRoutingModule,
-    ReactiveFormsModule
+    SharedModule
   ]
 })
 export class UserformModule { }

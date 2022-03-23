@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './forms/forms.component';
 import { ListComponent } from './list/list.component';
 import { ServicesService } from './services/services.service';
@@ -10,6 +9,7 @@ import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { FormModalComponent } from './form-modal/form-modal.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -25,8 +25,7 @@ import { FormModalComponent } from './form-modal/form-modal.component';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
+    SharedModule,
     HttpClientModule
   ],
   providers:[

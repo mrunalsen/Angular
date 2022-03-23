@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+ 
+  login : boolean = true
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  onSwitch() {
+    this.login = !this.login;
+  }
 }

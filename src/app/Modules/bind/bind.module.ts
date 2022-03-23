@@ -5,8 +5,8 @@ import { BindRoutingModule } from './bind-routing.module';
 import { BindComponent } from './bind.component';
 import { BindFormComponent } from './bind-form/bind-form.component';
 import { BindListComponent } from './bind-list/bind-list.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BindService } from './bind.service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { BindService } from './bind.service';
   imports: [
     CommonModule,
     BindRoutingModule,
-    ReactiveFormsModule,
+    SharedModule
   ],
   providers:[
     BindService

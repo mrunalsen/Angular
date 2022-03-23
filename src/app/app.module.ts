@@ -1,6 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeletePopupComponent } from './shared/delete-popup/delete-popup.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { BindService } from './Modules/bind/bind.service';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -35,8 +35,7 @@ import { BindService } from './Modules/bind/bind.service';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    ReactiveFormsModule,
-    FormsModule,
+    SharedModule,
     ResumebuilderModule,
     HttpClientModule,
     UserformRoutingModule,
@@ -45,7 +44,8 @@ import { BindService } from './Modules/bind/bind.service';
     BrowserAnimationsModule,
     OverlayModule
   ],
-  providers: [BindService],
+  providers: [
+    BindService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

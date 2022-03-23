@@ -1,22 +1,16 @@
 {
   "mentor": [
     {
-      "name": "rrrrvr",
+      "name": "veer",
       "age": "28",
       "gender": "Male",
-      "id": 3
+      "id": 1
     },
     {
-      "name": "rrrrvr",
-      "age": "28",
+      "name": "Zara",
+      "age": "26",
       "gender": "Male",
-      "id": 4
-    },
-    {
-      "name": "gdtdr",
-      "age": "28",
-      "gender": "Male",
-      "id": 5
+      "id": 2
     }
   ],
   "department": [
