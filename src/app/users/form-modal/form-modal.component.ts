@@ -20,7 +20,10 @@ export class FormModalComponent implements OnInit {
   @Output() public userData;
   @Output() public cancel;
 
-  constructor(private fb: FormBuilder, private service: FormService) { 
+  constructor(
+    private fb: FormBuilder, 
+    private service: FormService
+    ) { 
     this.modalTitle = 'Add User';
     this.editData = {} as User;
     this.department = [];

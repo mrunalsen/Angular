@@ -9,6 +9,7 @@ import { MentorListPresentationComponent } from './mentor-list-container/mentor-
 import { MentorRoutingModule } from './mentor-routing.module';
 import { MentorComponent } from './mentor.component';
 import { MentorService } from './mentor.service';
+import { FilterPresentationComponent } from './mentor-list-container/mentor-list-presentation/filter-presentation/filter-presentation.component';
 
 
 
@@ -19,6 +20,7 @@ import { MentorService } from './mentor.service';
     MentorFormContainerComponent,
     MentorListPresentationComponent,
     MentorFormPresentationComponent,
+    FilterPresentationComponent,
   ],
   imports: [
     CommonModule,

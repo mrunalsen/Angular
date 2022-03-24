@@ -10,6 +10,7 @@ import { UsersComponent } from './users.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { FormModalComponent } from './form-modal/form-modal.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +26,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
   providers:[

@@ -1,3 +1,5 @@
+import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
+import { ComponentPortal } from '@angular/cdk/portal';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Mentor } from '../../mentor.model';
@@ -24,10 +26,10 @@ export class MentorListPresentationComponent implements OnInit {
 
  @Output() public delete: EventEmitter<number>;
  private _mentorList!: Mentor[];
-
+    
   constructor(
     private mentorListPresenter: MentorListPresenterService,
-    private router: Router
+    private router: Router,
   ) { 
     this.delete = new EventEmitter()
   }
@@ -45,4 +47,8 @@ export class MentorListPresentationComponent implements OnInit {
   onEdit(id: number) {
     this.router.navigateByUrl(`mentor/edit/${id}`);
   }
+  openFilterModel(){
+    this.mentorListPresenter.openFormModel();
+  }
+ 
 }
