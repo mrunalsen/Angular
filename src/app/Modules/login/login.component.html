@@ -1,20 +1,19 @@
 <div class="wrapper d-flex align-items-center">
  <div class="container-fluid w-25">
-  <form class=" d-flex flex-column">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    {{login}}
-    <button type="submit" class="btn btn-primary mt-4">Sign In</button>
+  <form class=" d-flex flex-column" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+    <div class="email p-20">
+      <label for="email">Email</label><br>
+      <input type="text" id="email" name="email" placeholder="Enter Your Email" formControlName="email" class="text-box">
+  </div>
+    <div class="first-name p-20">
+      <label for="password">Password</label><br>
+      <input type="password" id="firsttname" name="password" placeholder="Enter your password" formControlName="password" class="text-box">
+    
+  </div>
+    <button type="submit" class="btn btn-primary mt-4">Login</button>
     <div class="form-group d-flex flex-column">
       <small>{{login? 'Dont have an account' : 'Already a member'}}</small>
-      <a (click)="onSwitch()">Create One</a>
+      <a  (click)="onSwitch()">Create One</a>
     </div>
   </form>
  </div>

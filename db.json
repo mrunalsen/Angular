@@ -1,12 +1,6 @@
 {
   "mvpUser": [
     {
-      "name": "mitsubo",
-      "age": 50,
-      "gender": "male",
-      "id": 1
-    },
-    {
       "name": "mehul",
       "age": 5,
       "gender": "male",
@@ -20,12 +14,6 @@
     }
   ],
   "mentor": [
-    {
-      "name": "Zara",
-      "age": "26",
-      "gender": "Male",
-      "id": 2
-    },
     {
       "name": "gdtdr",
       "age": "28",
