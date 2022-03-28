@@ -24,8 +24,12 @@ const routes: Routes = [
   { path: 'mentor', loadChildren: () => import('./Modules/mentor/mentor.module').then(m => m.MentorModule) },
   
   { path: 'bind', loadChildren: () => import('./Modules/bind/bind.module').then(m => m.BindModule) },
+  
   { path: 'login', loadChildren: () => import('./Modules/login/login.module').then(m => m.LoginModule) },
+
   { path: 'mvp', loadChildren: () => import('./Modules/mvp-demo/mvp-demo.module').then(m => m.MvpDemoModule) },
+
+  { path: 'mvppractice', loadChildren: () => import('./Modules/mvppractice/mvppractice.module').then(m => m.MvppracticeModule) },
 ];
 
 @NgModule({

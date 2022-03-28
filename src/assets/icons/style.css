@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'app';
-  src:  url('fonts/app.eot?uc2zag');
-  src:  url('fonts/app.eot?uc2zag#iefix') format('embedded-opentype'),
-    url('fonts/app.ttf?uc2zag') format('truetype'),
-    url('fonts/app.woff?uc2zag') format('woff'),
-    url('fonts/app.svg?uc2zag#app') format('svg');
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?idq4sy');
+  src:  url('fonts/icomoon.eot?idq4sy#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?idq4sy') format('truetype'),
+    url('fonts/icomoon.woff?idq4sy') format('woff'),
+    url('fonts/icomoon.svg?idq4sy#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +12,7 @@
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'app' !important;
+  font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -25,36 +25,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-calendar:before {
+.icon-drag:before {
   content: "\e900";
 }
-.icon-cart:before {
-  content: "\e901";
+.icon-resume1:before {
+  content: "\e92b";
 }
-.icon-compare_arrows:before {
-  content: "\e902";
+.icon-mentors:before {
+  content: "\e976";
 }
-.icon-dot-circle-o:before {
-  content: "\e903";
-}
-.icon-enter:before {
-  content: "\e904";
-}
-.icon-grid:before {
-  content: "\e905";
-}
-.icon-question:before {
-  content: "\e906";
-}
-.icon-search1:before {
-  content: "\e907";
+.icon-trial:before {
+  content: "\e996";
 }
 .icon-shield:before {
-  content: "\e908";
+  content: "\e9b4";
 }
-.icon-user:before {
-  content: "\e909";
+.icon-logout:before {
+  content: "\ea13";
 }
-.icon-search:before {
-  content: "\e986";
+.icon-bind:before {
+  content: "\ea45";
+}
+.icon-assessment:before {
+  content: "\ea6b";
+}
+.icon-clear-formatting:before {
+  content: "\ea6f";
+}
+.icon-paragraph-justify:before {
+  content: "\ea7a";
+}
+.icon-users:before {
+  content: "\eabd";
+}
+.icon-practice:before {
+  content: "\ead0";
+}
+.icon-file-pdf:before {
+  content: "\eadf";
+}
+.icon-file-openoffice:before {
+  content: "\eae0";
+}
+.icon-file-word:before {
+  content: "\eae1";
+}
+.icon-file-excel:before {
+  content: "\eae2";
+}
+.icon-libreoffice:before {
+  content: "\eae3";
 }
