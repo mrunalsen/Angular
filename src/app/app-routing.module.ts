@@ -5,7 +5,7 @@ import { FormsComponent } from './users/forms/forms.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'mvp', pathMatch:'full'
+    path: '', redirectTo: 'login', pathMatch:'full'
   },
   {
     path: 'users',

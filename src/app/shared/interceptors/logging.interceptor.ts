@@ -9,10 +9,18 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class LoggingInterceptor implements HttpInterceptor {
-
+  token: string = "Fake Token";
   constructor() {}
 
+  // intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  //   return next.handle(request);
+  // }
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+    this.token = localStorage.getItem('token') ?? "Fake Token";
+    return next.handle(request.clone({
+      setHeaders: {
+        "Authorization": `Bearer ${this.token}`
+      }
+    }));
   }
 }

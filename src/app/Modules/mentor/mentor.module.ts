@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MentorFormContainerComponent } from './mentor-form-container/mentor-form-container.component';
@@ -25,8 +24,7 @@ import { FilterPresentationComponent } from './mentor-list-container/mentor-list
   imports: [
     CommonModule,
     MentorRoutingModule,
-    SharedModule,
-    HttpClientModule
+    SharedModule
   ],
   providers: [
     MentorService

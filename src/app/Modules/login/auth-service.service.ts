@@ -18,4 +18,5 @@ export class AuthServiceService {
   loginData(creds: login): Observable<MyResponse>{
     return this.http.post<MyResponse>(`http://localhost:3001/login`, creds)
   }
+  
 }

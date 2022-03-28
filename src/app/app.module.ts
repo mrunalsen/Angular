@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,6 +18,7 @@ import { DeletePopupComponent } from './shared/delete-popup/delete-popup.compone
 import { OverlayModule } from '@angular/cdk/overlay';
 import { BindService } from './Modules/bind/bind.service';
 import { SharedModule } from './shared/shared.module';
+import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
 
 
 
@@ -45,7 +46,13 @@ import { SharedModule } from './shared/shared.module';
     OverlayModule
   ],
   providers: [
-    BindService],
+    BindService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

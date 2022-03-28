@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsComponent } from './forms/forms.component';
 import { ListComponent } from './list/list.component';
@@ -27,8 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     UsersRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule
+    FormsModule
   ],
   providers:[
 ServicesService
