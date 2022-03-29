@@ -1,7 +1,7 @@
 <div class="container-fluid p-4 bg-light h-100">
     <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
         <legend>
-            <h2>FORM :&nbsp;&nbsp; </h2>
+            <h2>Filter&nbsp;&nbsp; </h2>
         </legend><br>
         <div class="form-group">
             <label>Name</label>
@@ -19,16 +19,16 @@
                 <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
                 <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
             </div> -->
-        </div><br>
+        </div>
 
 
-        <!-- <div>
+        <div class="my-3">
             <label for="gender">Gender :&nbsp; &nbsp; </label>
             <input type="radio" formControlName="gender" id="male" name="gender" value="male">
             <label for="male">Male &nbsp; </label>
             <input type="radio" formControlName="gender" id="female" name="gender" value="female">
-            <label for="female">Female</label><br>
-        </div><br> -->
+            <label for="female">Female</label>
+        </div>
 
 
         <button type="submit" class="btn btn-success">Submit</button>

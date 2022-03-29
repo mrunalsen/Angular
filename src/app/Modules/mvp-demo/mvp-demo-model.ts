@@ -3,6 +3,7 @@ export class mvpclient{
     public name: string;
     public age: string;
     public gender: string;
+    public  keys: any;
     constructor(
       id: number,
       name: string,

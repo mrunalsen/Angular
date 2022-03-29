@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?idq4sy');
-  src:  url('fonts/icomoon.eot?idq4sy#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?idq4sy') format('truetype'),
-    url('fonts/icomoon.woff?idq4sy') format('woff'),
-    url('fonts/icomoon.svg?idq4sy#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?3fa37s');
+  src:  url('fonts/icomoon.eot?3fa37s#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?3fa37s') format('truetype'),
+    url('fonts/icomoon.woff?3fa37s') format('woff'),
+    url('fonts/icomoon.svg?3fa37s#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -52,7 +52,7 @@
 .icon-clear-formatting:before {
   content: "\ea6f";
 }
-.icon-paragraph-justify:before {
+.icon-menu:before {
   content: "\ea7a";
 }
 .icon-users:before {
@@ -64,7 +64,7 @@
 .icon-file-pdf:before {
   content: "\eadf";
 }
-.icon-file-openoffice:before {
+.icon-file-bird:before {
   content: "\eae0";
 }
 .icon-file-word:before {
@@ -75,4 +75,7 @@
 }
 .icon-libreoffice:before {
   content: "\eae3";
+}
+.icon-arrow-up-down:before {
+  content: "\e903";
 }

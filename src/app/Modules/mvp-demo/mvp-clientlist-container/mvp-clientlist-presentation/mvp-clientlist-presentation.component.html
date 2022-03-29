@@ -1,34 +1,53 @@
-<div class="py-3" (delete)="($event)">
-<h1>
-    List of MVP-USERS
-</h1>
-<div class="d-flex justify-content-between">
-    <button class="btn btn-primary" routerLink="../add">Add User</button>
-    <button class="btn btn-primary" (click)="filter()">Filter</button>
+<div class="container-fluid">
+    <div class="py-3" (delete)="($event)">
+        <h1>
+            List of USERS
+        </h1>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-primary" routerLink="../add">Add User</button>
+            <button class="btn btn-primary" (click)="filter()">Filter</button>
+        </div>
+        
+        </div>
+        
+        <table class="table caption-top border">
+            <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr class="align-middle" *ngFor="let item of mvpclientlist| slice:0:10, let i = index">
+                      <td class="col">{{ i + 1}}</td>
+                      <td class="col">{{item.name}}</td>
+                      <td class="col">{{item.age}}</td>
+                      <td class="col">{{item.gender}}</td>
+                      <td class="col">
+                          <button class="btn btn-primary" (click)="onEdit(item.id)">Edit</button>
+                          <button class="btn border-danger ms-2" (click)="onDelete(item.id)"><span class="text-danger ">Delete</span></button>
+                      </td>
+                  </tr>
+              </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+              <li *ngFor="let i of getArrayFromNumber(mvpclientlist.length); let in = index" class="page-item"><a class="page-link" href="#">{{in+1}}</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
 </div>
-
-</div>
-
-<table class="table caption-top border">
-    <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Name</th>
-          <th scope="col">Age</th>
-          <th scope="col">Gender</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="align-middle" *ngFor="let c of mvpclientlist, let i = index">
-              <td class="col">{{ i + 1}}</td>
-              <td class="col">{{c.name}}</td>
-              <td class="col">{{c.age}}</td>
-              <td class="col">{{c.gender}}</td>
-              <td class="col">
-                  <button class="btn btn-success" (click)="onEdit(c.id)">Edit</button>
-                  <button class="btn btn-danger ms-2" (click)="onDelete(c.id)">Delete</button>
-              </td>
-          </tr>
-      </tbody>
-</table>

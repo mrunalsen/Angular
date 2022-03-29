@@ -16,6 +16,7 @@ export class MvpClientlistPresentationComponent implements OnInit {
   @Input() public set mvpclientlist(value: mvpclient[] | null) {
     if (value) {
       this._mvpList = value;
+      this.newList = value
     }
   }
   public get mvpclientlist(): mvpclient[] | null {
@@ -25,7 +26,9 @@ export class MvpClientlistPresentationComponent implements OnInit {
   constructor(private mvpPresenter: MvpClientlistPresenterService, private router: Router, private overlay: Overlay) {
     this.delete = new EventEmitter();
   }
+  public newList : mvpclient[];
   private _mvpList: mvpclient[];
+  public _mvpclientlist: mvpclient[];
   ngOnInit(): void {
     this.mvpPresenter.delete$.subscribe
       ((res: number) => this.delete.emit(res))
@@ -37,6 +40,7 @@ export class MvpClientlistPresentationComponent implements OnInit {
     this.router.navigateByUrl(`mvp/edit/${id}`)
   }
   filter(){
+    this._mvpList = this.newList
     this.openOverlay();
   }
   openOverlay(){
@@ -69,8 +73,19 @@ export class MvpClientlistPresentationComponent implements OnInit {
     }
     if (!(filters.name === "")) {
       this._mvpList = this._mvpList.filter((item) => {
-        return item.name.toLowerCase().match(filters.name.toLowerCase())
+        // return item.name.toLowerCase().match(filters.name.toLowerCase())
+        return item.name == filters.name 
       })
     }
+    if (!(filters.gender === "")) {
+      this._mvpList = this._mvpList.filter((item)=>{
+        return item.gender == filters.gender
+      })
+    }
+  }
+
+  // Pagination
+  getArrayFromNumber(length){
+    return new Array(length/10)
   }
 }
