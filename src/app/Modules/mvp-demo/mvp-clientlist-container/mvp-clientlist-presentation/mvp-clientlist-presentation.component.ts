@@ -19,7 +19,7 @@ export class MvpClientlistPresentationComponent implements OnInit {
       this.newList = value
     }
   }
-  public get mvpclientlist(): mvpclient[] | null {
+  public get mvpclientlist(): mvpclient[] {
     return this._mvpList;
   }
   @Output() public delete: EventEmitter<number>;
@@ -84,8 +84,11 @@ export class MvpClientlistPresentationComponent implements OnInit {
     }
   }
 
-  // Pagination
-  getArrayFromNumber(length){
-    return new Array(length/10)
-  }
+
+  changePage(userList: mvpclient[]) {
+    this.newList = userList;
+    //  this.cdr.markForCheck();
+    //  console.log(this.customerList);
+  } 
+
 }

@@ -18,7 +18,7 @@ export class MvpService {
   public getmvpclientbyId(id: string): Observable<mvpclient> {
     return this.http.get<mvpclient>(`http://localhost:3000/mvpUser/${id}`)
   }
-  public mvpDelete(id: number): any{
+  public mvpDelete(id: number): Observable<any>{
     return this.http.delete<any>(`http://localhost:3000/mvpUser/${id}`)
   }
   public saveData(mvpclient: mvpclient): any {

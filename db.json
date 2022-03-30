@@ -2,12 +2,6 @@
   "mvpData": [],
   "mvpUser": [
     {
-      "name": "mehul",
-      "age": 1,
-      "gender": "male",
-      "id": 2
-    },
-    {
       "name": "jconb",
       "age": 17,
       "gender": "male",
