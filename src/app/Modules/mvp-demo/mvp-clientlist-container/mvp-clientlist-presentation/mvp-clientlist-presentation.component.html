@@ -21,7 +21,7 @@
                 </tr>
               </thead>
               <tbody>
-                  <tr class="align-middle" *ngFor="let item of mvpclientlist| slice:0:10, let i = index">
+                  <tr class="align-middle" *ngFor="let item of newList, let i = index">
                       <td class="col">{{ i + 1}}</td>
                       <td class="col">{{item.name}}</td>
                       <td class="col">{{item.age}}</td>
@@ -33,21 +33,5 @@
                   </tr>
               </tbody>
         </table>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only"></span>
-                </a>
-              </li>
-              <li *ngFor="let i of getArrayFromNumber(mvpclientlist.length); let in = index" class="page-item"><a class="page-link" href="#">{{in+1}}</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only"></span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+        <app-pagination [items]="mvpclientlist" [itemsPerPage]="8" (changePage)="changePage($event)" class="d-flex justify-content-center align-items-center"></app-pagination>
 </div>
