@@ -30,6 +30,8 @@ const routes: Routes = [
   { path: 'mvp', loadChildren: () => import('./Modules/mvp-demo/mvp-demo.module').then(m => m.MvpDemoModule) },
 
   { path: 'mvppractice', loadChildren: () => import('./Modules/mvppractice/mvppractice.module').then(m => m.MvppracticeModule) },
+  
+  { path: 'file-upload', loadChildren: () => import('./Modules/file-upload/file-upload.module').then(m => m.FileUploadModule) },
 ];
 
 @NgModule({

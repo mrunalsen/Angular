@@ -1,6 +1,6 @@
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { mvpclient } from '../../mvp-demo-model';
 import { MvpClientlistPresenterService } from '../mvp-clientlist-presenter/mvp-clientlist-presenter.service';
@@ -23,7 +23,7 @@ export class MvpClientlistPresentationComponent implements OnInit {
     return this._mvpList;
   }
   @Output() public delete: EventEmitter<number>;
-  constructor(private mvpPresenter: MvpClientlistPresenterService, private router: Router, private overlay: Overlay) {
+  constructor(private mvpPresenter: MvpClientlistPresenterService, private router: Router, private overlay: Overlay,private cdr:ChangeDetectorRef) {
     this.delete = new EventEmitter();
   }
   public newList : mvpclient[];
@@ -32,6 +32,8 @@ export class MvpClientlistPresentationComponent implements OnInit {
   ngOnInit(): void {
     this.mvpPresenter.delete$.subscribe
       ((res: number) => this.delete.emit(res))
+
+      this.cdr.detectChanges();
   }
   onDelete(id: number) {
     this.mvpPresenter.ondelete(id);
@@ -87,7 +89,7 @@ export class MvpClientlistPresentationComponent implements OnInit {
 
   changePage(userList: mvpclient[]) {
     this.newList = userList;
-    //  this.cdr.markForCheck();
+     this.cdr.detectChanges();
     //  console.log(this.customerList);
   } 
 
