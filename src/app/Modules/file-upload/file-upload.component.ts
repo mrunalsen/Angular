@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MyFile } from './file.modal';
+import { FilesService } from './files.service';
 
 @Component({
   selector: 'app-file-upload',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FileUploadComponent implements OnInit {
 
-  constructor() { }
+  /** user list data */
+  public filesList$: Observable<MyFile[]>
+
+  constructor(private fileService: FilesService) { 
+    this.filesList$ = new Observable<MyFile[]>();
+  }
 
   ngOnInit(): void {
+    this.filesList$ = this.fileService.getAllFiles();
+  }
+
+  UploadFile(file: MyFile) {
+    this.fileService.addFile(file).subscribe({
+      next: () => {
+        alert("File Added");
+        this.filesList$ = this.fileService.getAllFiles();
+      },
+      error: (e) => { console.log(e) }
+    })
   }
 
 }

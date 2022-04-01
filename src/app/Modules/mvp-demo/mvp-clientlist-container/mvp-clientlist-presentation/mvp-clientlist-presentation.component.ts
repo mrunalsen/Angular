@@ -67,6 +67,7 @@ export class MvpClientlistPresentationComponent implements OnInit {
     });
   }
 
+  // data filter
   filterData(filters:any){
     if(!(filters.age === "")) {
       this._mvpList = this._mvpList.filter((item)=>{
@@ -84,6 +85,7 @@ export class MvpClientlistPresentationComponent implements OnInit {
         return item.gender == filters.gender
       })
     }
+    
   }
 
 
