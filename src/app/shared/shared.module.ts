@@ -21,7 +21,8 @@ import { SearchPipe } from './pipes/search.pipe';
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    PaginationComponent
+    PaginationComponent,
+    FiledropzoneDirective
   ]
 })
 export class SharedModule { }
