@@ -29,7 +29,7 @@ export class FileUploadPresentationComponent implements OnInit {
   }
 
   readFile(files: any) {
-    this.file = files.files[0];
+    this.file = files.files;
   }
 
   uploadFile() {

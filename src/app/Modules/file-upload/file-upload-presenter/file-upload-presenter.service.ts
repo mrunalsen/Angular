@@ -20,6 +20,7 @@ export class FileUploadPresenterService {
 
   uploadFile(file:File){
     let size=Math.round(file.size/1024/1024)
+    console.log(file);
     if(size<=2 && file.type=="image/jpeg"){
       
       this.file.name=file.name;
