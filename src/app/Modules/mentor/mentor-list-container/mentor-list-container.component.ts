@@ -23,7 +23,7 @@ export class MentorListContainerComponent implements OnInit {
   delete(id: number) {
     this.mentorService.deleteMentor(id).subscribe((res: any) => {
       console.log(res);
-      alert("delte from container")
+      alert("delete from container")
       this.getMentor()
     });
   }

@@ -6,20 +6,20 @@ import { FilterPresentationComponent } from '../mentor-list-presentation/filter-
 
 @Injectable()
 export class MentorListPresenterService {
- 
-private delete: Subject<number>;
-private delete$: Observable<number>;
+
+  private delete: Subject<number>;
+  private delete$: Observable<number>;
   constructor(
-    private overlay : Overlay
+    private overlay: Overlay
   ) {
     this.delete = new Subject();
     this.delete$ = new Observable();
     this.delete$ = this.delete.asObservable();
-   }
-   public onDelete(id:number) {
-     this.delete.next(id)
-   }
-   openFormModel() {
+  }
+  public onDelete(id: number) {
+    this.delete.next(id)
+  }
+  openFormModel() {
     //config of overlay
     let config = new OverlayConfig();
     config.hasBackdrop = true
@@ -33,9 +33,9 @@ private delete$: Observable<number>;
     overlayRef.backdropClick().subscribe(() => {
       overlayRef.detach();
     });
-   
+
     // componentRef.instance.cancel.subscribe(() => overlayRef.detach());
-    
+
   }
 
 }

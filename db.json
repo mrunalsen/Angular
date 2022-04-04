@@ -360,24 +360,5 @@
       "id": 10
     }
   ],
-  "files": [
-    {
-      "name": "form.pdf",
-      "size": 2,
-      "type": "application/pdf",
-      "id": 1
-    },
-    {
-      "name": "IMG-20220225-WA0005.jpg",
-      "size": 0,
-      "type": "image/jpeg",
-      "id": 2
-    },
-    {
-      "name": "IMG-20220225-WA0005.jpg",
-      "size": 0,
-      "type": "image/jpeg",
-      "id": 3
-    }
-  ]
+  "files": []
 }

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MyFile } from '../file.modal';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FileListPresenterService } from '../file-list-presenter/file-list-presenter.service';
+import { MyFile } from '../file.model';
 
 @Component({
   selector: 'app-file-list-presentation',
@@ -19,14 +20,26 @@ export class FileListPresentationComponent implements OnInit {
 
   private _fileList: MyFile[];
 
-  constructor() { }
+  @Output() public delete: EventEmitter<number>;
+  
+  constructor(
+    public listpresenter: FileListPresenterService
+  ) { 
+    this.delete = new EventEmitter()
+  }
 
   ngOnInit(): void {
+    this.listpresenter.delete$.subscribe((res)=>
+    {
+      this.delete.emit(res)
+    })
   }
   
-  // onDelete(id: number) {
-  //   this.fileList.onDelete(id);
-  //   this.onDelete.emit(id);
-  //   this.fileList
-  // }
+  onDelete(id: number) {
+   this.listpresenter.onDelete(id)
+  }
+
+  public viewFile(content:string, type: string){
+    this.listpresenter.showFile(content, type);
+  }
 }
