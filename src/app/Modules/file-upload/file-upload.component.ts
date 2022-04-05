@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FileUploadPresenterService } from './file-upload-presenter/file-upload-presenter.service';
 import { FileUploadService } from './file-upload.service';
-import { MyFile } from './file.modal';
+import { MyFile } from './file.model';
 
 @Component({
   selector: 'app-file-upload',
@@ -27,6 +27,12 @@ export class FileUploadComponent implements OnInit {
         this.filesList$ = this.fileService.getFiles();
       },
       error: (e) => { console.log(e) }
+    })
+  }
+  DeleteFile(id:number){
+    this.fileService.deleteFiles(id).subscribe(()=>{
+      alert('file is deleted');
+      this.filesList$ = this.fileService.getFiles()
     })
   }
 }

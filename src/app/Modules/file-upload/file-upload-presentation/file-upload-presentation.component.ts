@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FileUploadPresenterService } from '../file-upload-presenter/file-upload-presenter.service';
-import { MyFile } from '../file.modal';
+import { MyFile } from '../file.model';
 
 @Component({
   selector: 'app-file-upload-presentation',
@@ -10,14 +10,14 @@ import { MyFile } from '../file.modal';
 export class FileUploadPresentationComponent implements OnInit {
 
   public file: File;
-  public startDate:string;
-  public endDate:string;
+  public startDate: string;
+  public endDate: string;
 
-  @Output() fileUpload:EventEmitter<MyFile>;
+  @Output() fileUpload: EventEmitter<MyFile>;
 
-  constructor(private fileUploadPrensenter:FileUploadPresenterService) {
+  constructor(private fileUploadPrensenter: FileUploadPresenterService) {
     this.fileUpload = new EventEmitter<MyFile>();
-   }
+  }
 
   ngOnInit(): void {
     this.fileUploadPrensenter.fileUpload$.subscribe({
@@ -28,10 +28,8 @@ export class FileUploadPresentationComponent implements OnInit {
     })
   }
 
-  readFile(files: any) {
-    this.file = files.files;
-  }
 
+  // Upload
   uploadFile() {
     if (this.file) {
       this.fileUploadPrensenter.uploadFile(this.file)
@@ -41,11 +39,17 @@ export class FileUploadPresentationComponent implements OnInit {
     }
   }
 
-  readStartDate(input:any){
-    this.startDate=input.target.value;
+
+  readFile(filedata: any) {
+    this.file = filedata.files[0];
   }
 
-  readEndDate(input:any){
-    this.endDate=input.target.value;
+  // Date Picker
+  readStartDate(input: any) {
+    this.startDate = input.target.value;
+  }
+
+  readEndDate(input: any) {
+    this.endDate = input.target.value;
   }
 }
