@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { MyFile } from '../file.model';
+import { MyFile } from '../file.modal';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class FileUploadPresenterService {
   public fileUpload$:Observable<MyFile>;
 
   constructor() { 
-    this.file={} as MyFile;
+    this.file={} as File;
     this.fileUpload=new Subject<MyFile>();
     this.fileUpload$=new Observable<MyFile>();
     this.fileUpload$=this.fileUpload.asObservable();
@@ -26,17 +26,8 @@ export class FileUploadPresenterService {
       this.file.name=file.name;
       this.file.size=size;
       this.file.type=file.type;
-      // file reader to read file content
-      const reader = new FileReader();
-      // read as url to get based64 type data
-      reader.readAsDataURL(file);
-      reader.onload=(event)=>{
-        this.file.content=event.target?.result as string
-        this.fileUpload.next(this.file);
-      }
-    }
-    else if(file.type!="image/jpeg"){
-      alert("Please upload proper format");
+
+      this.fileUpload.next(this.file);
     }
     else{
       alert("File Size is greater than 2MB");

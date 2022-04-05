@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { MyFile } from './file.model';
+import { MyFile } from './file.modal';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +15,15 @@ export class FileUploadService {
     this.apiLink = environment.baseURL;
   }
 
- public getFiles():Observable<MyFile[]>{
+  getFiles():Observable<MyFile[]>{
     return this.http.get<MyFile[]>(`${this.apiLink}/files`)
   }
 
-  public addFiles(file:MyFile):Observable<MyFile>{
+  addFiles(file:MyFile):Observable<MyFile>{
     return this.http.post<MyFile>(`${this.apiLink}/files`,file)
   }
 
-  public deleteFiles(id:number):Observable<MyFile>{
+  deleteFiles(id:number):Observable<MyFile>{
     return this.http.delete<MyFile>(`${this.apiLink}/files/${id}`)
   }
 }
