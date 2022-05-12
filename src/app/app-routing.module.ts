@@ -5,7 +5,7 @@ import { FormsComponent } from './users/forms/forms.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'login', pathMatch:'full'
+    path: '', redirectTo: 'medify', pathMatch:'full'
   },
   {
     path: 'users',
@@ -32,6 +32,8 @@ const routes: Routes = [
   { path: 'mvppractice', loadChildren: () => import('./Modules/mvppractice/mvppractice.module').then(m => m.MvppracticeModule) },
   
   { path: 'file-upload', loadChildren: () => import('./Modules/file-upload/file-upload.module').then(m => m.FileUploadModule) },
+
+  { path: 'medify', loadChildren: () => import('./Modules/medify/medify.module').then(m => m.MedifyModule) },
 ];
 
 @NgModule({
