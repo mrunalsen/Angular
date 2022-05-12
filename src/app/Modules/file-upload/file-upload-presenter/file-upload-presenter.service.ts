@@ -21,7 +21,7 @@ export class FileUploadPresenterService {
   uploadFile(file:File){
     let size=Math.round(file.size/1024/1024)
     console.log(file);
-    if(size<=2 && file.type=="image/jpeg"){
+    if(size<=2 && file.type=="image/jpg"){
       
       this.file.name=file.name;
       this.file.size=size;
@@ -35,7 +35,7 @@ export class FileUploadPresenterService {
         this.fileUpload.next(this.file);
       }
     }
-    else if(file.type!="image/jpeg"){
+    else if(file.type!="image/jpg"){
       alert("Please upload proper format");
     }
     else{
