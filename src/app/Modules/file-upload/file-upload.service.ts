@@ -15,15 +15,15 @@ export class FileUploadService {
     this.apiLink = environment.baseURL;
   }
 
- public getFiles():Observable<MyFile[]>{
+public  getFiles():Observable<MyFile[]>{
     return this.http.get<MyFile[]>(`${this.apiLink}/files`)
   }
 
-  public addFiles(file:MyFile):Observable<MyFile>{
+public  addFiles(file:MyFile):Observable<MyFile>{
     return this.http.post<MyFile>(`${this.apiLink}/files`,file)
   }
 
-  public deleteFiles(id:number):Observable<MyFile>{
+public  deleteFiles(id:number):Observable<MyFile>{
     return this.http.delete<MyFile>(`${this.apiLink}/files/${id}`)
   }
 }

@@ -23,6 +23,8 @@ export class MvpClientlistPresentationComponent implements OnInit {
     return this._mvpList;
   }
   @Output() public delete: EventEmitter<number>;
+
+  
   constructor(private mvpPresenter: MvpClientlistPresenterService, private router: Router, private overlay: Overlay,private cdr:ChangeDetectorRef) {
     this.delete = new EventEmitter();
   }

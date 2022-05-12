@@ -14,32 +14,31 @@ export class FileListPresentationComponent implements OnInit {
       this._fileList = value;
     }
   }
+  @Output() public delete : EventEmitter<number>;
   public get fileList(): MyFile[] {
     return this._fileList;
   }
 
   private _fileList: MyFile[];
 
-  @Output() public delete: EventEmitter<number>;
-  
-  constructor(
-    public listpresenter: FileListPresenterService
-  ) { 
-    this.delete = new EventEmitter()
+  constructor(public listpresenter: FileListPresenterService) { 
+    this.delete = new EventEmitter();
+    
   }
 
   ngOnInit(): void {
-    this.listpresenter.delete$.subscribe((res)=>
-    {
+    this.listpresenter.delete$.subscribe((res)=>{
       this.delete.emit(res)
     })
   }
-  
-  onDelete(id: number) {
-   this.listpresenter.onDelete(id)
+
+  // Delete
+  onDelete(id:number){
+    this.listpresenter.onDelete(id)
   }
 
-  public viewFile(content:string, type: string){
-    this.listpresenter.showFile(content, type);
+  // View uploaded Files
+  viewFile(content: string, type: string){
+    this.listpresenter.showFile(content, type)
   }
 }

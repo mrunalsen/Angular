@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { FileUploadPresenterService } from './file-upload-presenter/file-upload-presenter.service';
 import { FileUploadService } from './file-upload.service';
 import { MyFile } from './file.model';
 
@@ -18,22 +19,6 @@ export class FileUploadComponent implements OnInit {
   ngOnInit(): void {
     this.filesList$ = this.fileService.getFiles();
   }
-addFile(file:MyFile){
-  this.filesList$.subscribe({
-    next:(list)=>{
-      let isFile=list.find((res)=>{
-        return res.name===file.name
-      })
-      if (isFile){
-        alert('Duplicate File');
-      }
-      else{
-        this.UploadFile(file)
-      }
-    }
-  })
-}
-
 
   UploadFile(file: MyFile) {
     this.fileService.addFiles(file).subscribe({
@@ -46,7 +31,7 @@ addFile(file:MyFile){
   }
   DeleteFile(id:number){
     this.fileService.deleteFiles(id).subscribe(()=>{
-      alert("File " +id+ " is Deleted");
+      alert('file is deleted');
       this.filesList$ = this.fileService.getFiles()
     })
   }
