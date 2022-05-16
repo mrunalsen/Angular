@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MedifyRoutingModule } from './medify-routing.module';
 import { MedifyComponent } from './medify.component';
 import { ProjectPresentationComponent } from './project-presentation/project-presentation.component';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ProjectPresentationComponent } from './project-presentation/project-pre
   ],
   imports: [
     CommonModule,
-    MedifyRoutingModule
+    MedifyRoutingModule,
+    GoogleChartsModule
   ]
 })
 export class MedifyModule { }

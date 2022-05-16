@@ -5,7 +5,8 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { FiledropzoneDirective } from './directives/filedropzone.directive';
 import { SortDirective } from './directives/sort.directive';
 import { SearchPipe } from './pipes/search.pipe';
-
+import { AutofocusDirective } from './directives/autofocus.directive';
+import { PhonemaskDirective } from './directives/phonemask.directive';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { SearchPipe } from './pipes/search.pipe';
     PaginationComponent,
     FiledropzoneDirective,
     SortDirective,
-    SearchPipe
+    SearchPipe,
+    AutofocusDirective,
+    PhonemaskDirective,
   ],
   imports: [
     CommonModule
@@ -22,7 +25,9 @@ import { SearchPipe } from './pipes/search.pipe';
     FormsModule,
     ReactiveFormsModule,
     PaginationComponent,
-    FiledropzoneDirective
+    FiledropzoneDirective,
+    AutofocusDirective,
+    PhonemaskDirective
   ]
 })
 export class SharedModule { }
