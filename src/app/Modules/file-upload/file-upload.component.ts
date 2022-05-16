@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FileUploadPresenterService } from './file-upload-presenter/file-upload-presenter.service';
 import { FileUploadService } from './file-upload.service';
 import { MyFile } from './file.model';
 

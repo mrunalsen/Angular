@@ -1,0 +1,47 @@
+<!-- <div class="container-fluid">
+    <div class="row g-5">
+        <div>
+            <div>
+                <figure><img src="assets/img/cloud.png" alt="cloud"></figure>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+{{
+    data | json
+}}
+
+<!-- column chart -->
+<!-- using service -->
+<div style="width: 550px;">
+    <div class="d-flex justify-content-between">
+        <div class="ps-4">Patient Visited</div>
+        <div>
+            <select name="week" id="1" (change)="update($event)">
+                <option value="1">This Week</option>
+                <option value="2">Last Week</option>
+            </select>
+        </div>
+        <p>You selected {{selected}}</p>
+    </div>
+    <div>
+        <google-chart 
+            [type]="type"
+            [data]="data"
+            [options]="options"
+            [width]="width"
+            [height]="height">
+        </google-chart>
+    </div>  
+</div>
+
+<!--start: using directive -->
+<div appColumnChart >
+    
+</div>
+
