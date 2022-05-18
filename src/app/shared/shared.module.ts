@@ -7,6 +7,7 @@ import { SortDirective } from './directives/sort.directive';
 import { SearchPipe } from './pipes/search.pipe';
 import { AutofocusDirective } from './directives/autofocus.directive';
 import { PhonemaskDirective } from './directives/phonemask.directive';
+import { ChartDirective } from './directives/chart.directive';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { PhonemaskDirective } from './directives/phonemask.directive';
     SearchPipe,
     AutofocusDirective,
     PhonemaskDirective,
+    ChartDirective,
   ],
   imports: [
     CommonModule

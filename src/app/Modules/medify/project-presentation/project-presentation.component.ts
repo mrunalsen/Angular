@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ChartType } from 'angular-google-charts';
 import { Chart } from '../models/charts.model';
-import { Medical, Prescription } from '../models/medify.model';
+import { Medical, Patient, Prescription } from '../models/medify.model';
 import { ChartsService } from '../project-presenter/charts.service';
 import { ProjectPresenterService } from '../project-presenter/project-presenter.service';
 
@@ -15,10 +15,13 @@ export class ProjectPresentationComponent implements OnInit {
   constructor(
     private doctorService: ProjectPresenterService,
     private chartService: ChartsService,
-    private cRef: ChangeDetectorRef) { }
+    private cRef: ChangeDetectorRef,
+    ) { }
 
   ngOnInit(): void {
    this.getChartData();
+   this.getPrescriptionData();
+    this.getPatient();
   }
 
 
@@ -42,27 +45,6 @@ export class ProjectPresentationComponent implements OnInit {
     ["Wed", 1],
     ["Thu", 3],
     ["Fri", 5],
-    ["Sat", 2],
-    ["Sun", 1],
-    ["Mon", 1],
-    ["Tue", 1],
-    ["Wed", 1],
-    ["Thu", 1],
-    ["Fri", 1],
-    ["Sat", 2],
-    ["Sun", 1],
-    ["Mon", 1],
-    ["Tue", 1],
-    ["Wed", 1],
-    ["Thu", 1],
-    ["Fri", 1],
-    ["Sat", 2],
-    ["Sun", 1],
-    ["Mon", 1],
-    ["Tue", 1],
-    ["Wed", 1],
-    ["Thu", 1],
-    ["Fri", 1],
     ["Sat", 2],
     ["Sun", 1],
   ];
@@ -116,7 +98,7 @@ export class ProjectPresentationComponent implements OnInit {
 
   options = {
     legend: 'none',
-    bar: {groupWidth: "5"},
+    bar: {groupWidth: "30"},
     explorer: {axis: 'horizontal',keepInBounds: true},
     vAxis: {
       /**
@@ -182,6 +164,41 @@ export class ProjectPresentationComponent implements OnInit {
   //   }
 
   //end: column-chart
+  public firstName: String = 'Virat';
+
+  public Data: Medical[] = [
+    {
+      medical: "Medicare Pharmacy 1",
+      number: 99999999998,
+      address: "Valsad,Gujarat"
+    },
+    {
+      medical: "Medicare Pharmacy 2",
+      number: 99999999988,
+      address: "Valsad,Gujarat"
+    },
+    {
+      medical: "Medicare Pharmacy 3",
+      number: 99999999999,
+      address: "Valsad,Gujarat"
+    }
+  ]
+
+  public preData: Prescription[];
+
+  getPrescriptionData(){
+    this.doctorService.getPrescription().subscribe(data => {
+      this.preData = data;
+      console.log(data);
+    })
+  }
+
+  public patientData: Patient[];
+
+  getPatient() {
+    this.doctorService.getPatient().subscribe(data => {
+      this.patientData = data;
+      console.log(data);
+    })
+  }
 }
-
-
