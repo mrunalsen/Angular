@@ -5,6 +5,7 @@ import { MedifyRoutingModule } from './medify-routing.module';
 import { MedifyComponent } from './medify.component';
 import { ProjectPresentationComponent } from './project-presentation/project-presentation.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { GoogleChartsModule } from 'angular-google-charts';
   imports: [
     CommonModule,
     MedifyRoutingModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    SharedModule
   ]
 })
 export class MedifyModule { }
