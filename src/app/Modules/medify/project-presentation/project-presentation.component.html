@@ -1,11 +1,7 @@
-{{
-    data | json
-}}
-
 <!-- start: wrapper -->
 <div class="wrapper h-100">
     <!-- start: row -->
-    <div class="row g-4 h-100">
+    <div class="row g-4 h-100 overflow-auto">
         <!-- start: doctor's-intro -->
         <div class="col-md-7 col-12">
             <div class="d-flex justify-content-between p-3 h-100 shadow rounded">
@@ -33,7 +29,8 @@
                 <div class="d-flex col-6 align-items-center justify-content-between border-end border-dark p-3">
                     <div class="pe-3">
                         <figure>
-                            <img src="assets/image/pexels-marta-dzedyshko-2067396 (1).jpg" style="height: 60px;" alt="Pharma-logo">
+                            <img src="assets/image/pexels-marta-dzedyshko-2067396 (1).jpg" style="height: 60px;"
+                                alt="Pharma-logo">
                         </figure>
                     </div>
                     <div class="d-flex flex-column">
@@ -57,31 +54,22 @@
         <!-- start: google-chart -->
         <div class="col-md-7 col-12">
             <div class="h-100 shadow rounded">
-               
-<!-- column chart -->
-<!-- using service -->
-<div style="width: 550px;">
-    <div class="d-flex justify-content-between">
-        <div class="ps-4">Patient Visited</div>
-        <div>
-            <select name="week" id="1" (change)="update($event)">
-                <option value="1">This Week</option>
-                <option value="2">Last Week</option>
-                <option value="3">Last Month</option>
-            </select>
-        </div>
-        <p>You selected {{selected}}</p>
-    </div>
-    <div>
-        <google-chart 
-            [type]="type"
-            [data]="data"
-            [options]="options"
-            [width]="width"
-            [height]="height">
-        </google-chart>
-    </div>  
-</div>
+
+                <!-- column chart -->
+                    <div class="d-flex justify-content-between">
+                        <span class="ps-4">Patient Visited</span>
+                        <div>
+                            <select name="week" id="1" (change)="update($event)">
+                                <option value="1">This Week</option>
+                                <option value="2">Last Week</option>
+                                <option value="3">Last Month</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <google-chart [type]="type" [data]="data" [options]="options" [width]="width" [height]="height">
+                        </google-chart>
+                    </div>
             </div>
         </div>
         <!-- end: google-chart -->
@@ -126,7 +114,8 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div [ngClass]="{'text-success': pre.status == 'Approved', 'text-warning': pre.status == 'Pending', 'text-danger': pre.status == 'Rejected'  } ">
+                        <div
+                            [ngClass]="{'text-success': pre.status == 'Approved', 'text-warning': pre.status == 'Pending', 'text-danger': pre.status == 'Rejected'  } ">
                             {{pre.status}}
                         </div>
                         <div class="text-gray">by {{pre.medical}}</div>
@@ -137,46 +126,6 @@
                 </div>
             </div>
             <!-- end: view-prescription-1 -->
-
-            <!-- start: view-prescription-2 -->
-            <div class="d-flex justify-content-between">
-                <figure class="pe-3">
-                    <img src="/assets/image/logo-img.png" class="image" alt="Patient's Picture">
-                </figure>
-                <div class="col-4">
-                    <div>Zeel Patel</div>
-                    <div>Headache, Fever</div>
-                </div>
-                <div class="col-5">
-                    <div class="text-success">Approved</div>
-                    <div>by Patient</div>
-                </div>
-                <div class="time">
-                    12.35 AM
-                </div>
-            </div>
-            <!-- end: view-prescription-2 -->
-            <!-- start: view-prescription-3 -->
-            <div class="d-flex justify-content-between">
-                <div class="d-flex img">
-                    <figure class="pe-3">
-                        <img src="/assets/image/logo-img.png" class="image" alt="Patient's Picture">
-                    </figure>
-                    <div class="">
-                        <div>Zeel Patel</div>
-                        <div>Headache, Fever</div>
-                    </div>
-                </div>
-                <div class="">
-                    <div>Approved</div>
-                    <div>by Patient</div>
-                </div>
-                <div class="time">
-                    12.35 AM
-                </div>
-            </div>
-            <!-- end: view-prescription-3 -->
-
         </div>
         <!-- end: view prescription -->
 
@@ -201,37 +150,6 @@
                     <div class="d-flex flex-column patient-contact text-gray text-end">
                         <span>{{patient.time}}</span>
                         <span>{{patient.mobile}}</span>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-between">
-                    <div class="d-flex">
-                        <figure>
-                            <img src="assets/image/logo-img.png" class="image" alt="Image">
-                        </figure>
-                        <div class="patientName">
-                            <span>Ammy Richard</span>
-                            <span>Male,58 yrs</span>
-                        </div>
-                    </div>
-                    <div class="text-end">
-                        <div>1:00 AM</div>
-                        <div>9999988888</div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between">
-                    <div class="d-flex">
-                        <figure>
-                            <img src="assets/image/logo-img.png" class="image" alt="Image">
-                        </figure>
-                        <div class="patientName">
-                            <div>Ammy Richard</div>
-                            <div>Male,58 yrs</div>
-                        </div>
-                    </div>
-                    <div class="text-end">
-                        <div>1:00 AM</div>
-                        <div>9999988888</div>
                     </div>
                 </div>
             </div>
