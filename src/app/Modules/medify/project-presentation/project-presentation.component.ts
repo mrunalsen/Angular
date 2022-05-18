@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ChartType } from 'angular-google-charts';
+import { login } from '../../login/login.model';
 import { Chart } from '../models/charts.model';
 import { Medical, Patient, Prescription } from '../models/medify.model';
 import { ChartsService } from '../project-presenter/charts.service';
@@ -23,8 +24,7 @@ export class ProjectPresentationComponent implements OnInit {
    this.getPrescriptionData();
     this.getPatient();
   }
-
-
+ 
   
   //start: column chart 
 
@@ -36,7 +36,6 @@ export class ProjectPresentationComponent implements OnInit {
     this.chartService.getColumn().subscribe(data => {
       console.log(data)
       this.columnData = data;
-      this.method(data);
     })
   }
   public data = [
@@ -48,53 +47,6 @@ export class ProjectPresentationComponent implements OnInit {
     ["Sat", 2],
     ["Sun", 1],
   ];
-
-
-  //  dynamic data
-  method(temp: Chart[]) {
-    /**
-     * @forEach loop
-     */
-    //  let iterator = 0;
-    //   this.columnData.forEach( (i) => {
-    //   this.data[iterator][1] = i.patient;
-    //   console.log(this.data[iterator][1]);
-    //   iterator++;
-    // });
-
-    /**
-     * @for...of loop
-     */
-     let p = 0;
-     for (const i of temp) {
-      //  if(this.data[p][0]==i.day){
-        //  console.log(this.data[p][0]===i.day, " ",this.data[p][0], " ", i.day);
-         this.data[p][0] = i.day;
-         this.data[p][1] = i.patient;
-         this.cRef.detectChanges();
-      //  }
-      //  else{
-        //  this.data[p][1] = 0;
-      //  }
-       // console.log(this.data[p][1]);
-       p++;
-       
-     }
-     console.log(this.data)
-
-    // return newtempData;
-    /**
-     * @for loop
-     */
-    //  for(let i =0 ; i<= this.columnData.length; i++) {
-    //   //  console.log(this.columnData[i].patient);
-    //    this.data[i][1]=this.columnData[i].patient;
-    //   //  console.log(this.data[i][1])
-    //  }
-  }
-
-  columnNames = ['Year', 'Asia'];
-  //  backgroundColor: {color: 'red'};	
 
   options = {
     legend: 'none',
@@ -115,55 +67,55 @@ export class ProjectPresentationComponent implements OnInit {
     series:{
       0: { lineDashStyle: [2, 2] },
     },
-    colors: ['#7fb4be']
-    // chartArea: { width: '100%', height: '100%' },
+    colors: ['#7fb4be'],
+    chartArea: { width: '600', height: '100%' },
   };
 
-  width = 550;
+  width = 800;
   height = 500;
 
-  //  select this week or lasst week
-  public selected: number;
-  public tempColumnData: Chart[];
-  public tempData: Chart[];
+  public selected: number
+  public temper : Chart[]
+  
+  public update(e: any) {
+    this.data = [];
+    this.selected = e.target.value;
+    // console.log(this.selected)
 
-  update(e: any) {
-    this.selected = e.target.value
-    this.tempColumnData = this.columnData;
-
-    if (this.selected == 1) {
-      this.tempData = this.tempColumnData.slice(0, 7)
-      this.method(this.tempData)
-     
-      //  console.log(this.tempColumnData.slice(0,7));
+    if(this.selected == 1) {
+      this.temper = this.columnData.map((val) => val)
+      this.temper = this.temper.slice(-7)
+      console.log(this.columnData , "colummndata");
+      console.log(this.temper , "hi");
+            
+      this.temper.forEach((some) => {
+        this.data.push([some.day, some.patient])
+        // console.log(this.data);
+      })
+      // console.log(this.temper);
+    }
+    else if(this.selected == 2 ) {
+      this.temper = this.columnData.map((val) => val)
+      this.temper = this.temper.slice(-14, -7)
+      console.log(this.temper);
+      this.temper.forEach((some) => {
+        this.data.push([some.day, some.patient])
+        // console.log(this.data);
+      })
     }
     else {
-      this.tempData = this.tempColumnData.slice(7)
-      this.method(this.tempData);
-      this.cRef.detectChanges();
-      // console.log(this.tempColumnData.slice(7));
+      this.temper = this.columnData.map((val) => val)
+      this.temper = this.temper.slice(-21)
+      // console.log(this.temper);
+      this.temper.forEach((some) => {
+        this.data.push([some.day, some.patient])
+        // console.log(this.data);
+      })
     }
+    console.log(this.data);
+    
   }
-
-  // updateData(e: any) {
-  //   this.selected = e.target.value
-  //   this.tempColumnData = this.columnData;
-
-  //   if (this.selected == 1) {
-  //     this.tempData = this.tempColumnData.slice(0, 7)
-  //     console.log(this.tempData, "Week data")
-  //     // this.data = this.tempData
-  //     this.data = this.mehtod(this.tempData)
-  //     console.log(this.data,"updated")
-  //   }
-  //   else {
-  //     this.tempData = this.tempColumnData.slice(7)
-  //     console.log(this.tempData, "Week data")
-  //     this.data = this.mehtod(this.tempData)
-  //     console.log(this.data,"updated")
-  //   }
-
-  //end: column-chart
+  
   public firstName: String = 'Virat';
 
   public Data: Medical[] = [
