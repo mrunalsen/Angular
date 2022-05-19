@@ -59,31 +59,31 @@
     },
     {
       "day": "Mon",
-      "patient": 7000
+      "patient": 700
     },
     {
       "day": "Tue",
-      "patient": 6000
+      "patient": 600
     },
     {
       "day": "Wed",
-      "patient": 5000
+      "patient": 500
     },
     {
       "day": "Thu",
-      "patient": 4000
+      "patient": 400
     },
     {
       "day": "Fri",
-      "patient": 3000
+      "patient": 300
     },
     {
       "day": "Sat",
-      "patient": 2000
+      "patient": 200
     },
     {
       "day": "Sun",
-      "patient": 1000
+      "patient": 100
     }
   
 ],

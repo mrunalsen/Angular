@@ -1,6 +1,5 @@
-import { AfterContentInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component, HostListener, OnInit } from '@angular/core';
 import { ChartType } from 'angular-google-charts';
-import { login } from '../../login/login.model';
 import { Chart } from '../models/charts.model';
 import { Medical, Patient, Prescription } from '../models/medify.model';
 import { ChartsService } from '../project-presenter/charts.service';
@@ -16,7 +15,7 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
   constructor(
     private doctorService: ProjectPresenterService,
     private chartService: ChartsService,
-    private cRef: ChangeDetectorRef,
+    
   ) { }
   ngAfterContentInit(): void {
   }
@@ -27,7 +26,6 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
     this.getPatient();
 
   }
-
 
   //start: column chart 
 
@@ -54,31 +52,34 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
   ];
 
   options = {
+    width: '100%',
+    height: '200',
     legend: 'none',
-    bar: { groupWidth: "30" },
+    bar: { groupWidth: "10" },
     explorer: { axis: 'horizontal', keepInBounds: true },
     vAxis: {
-      /**
-       * @remove : minor gridlines
-       */
       minorGridlines: { count: 0 },
       gridlines: {
-        // color: 'none'
-
         lineStyle: "dashed",
       },
-
     },
     series: {
       0: { lineDashStyle: [2, 2] },
     },
     colors: ['#7fb4be'],
-    chartArea: { width: '600', height: '100%' },
+    // chartArea: { width: '100%', height: '200' },
   };
+  @HostListener('window:resize', ['$event'])
+onResize(event) {
+  if(event.target.innerWidth > 620){
+    console.log("they changed me ")
+    this.options.bar.groupWidth = "50";
+  }
+}
 
-  width = 800;
-  height = 500;
-
+  // width = 800;
+  // height = 400;
+  
   public selected: number
   public temper: Chart[]
 
@@ -107,7 +108,6 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
   }
 
   public firstName: String = 'Virat';
-
   public Data: Medical[] = [
     {
       medical: "Medicare Pharmacy 1",
@@ -131,7 +131,6 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
   getPrescriptionData() {
     this.doctorService.getPrescription().subscribe(data => {
       this.preData = data;
-      console.log(data);
     })
   }
 
@@ -140,7 +139,6 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
   getPatient() {
     this.doctorService.getPatient().subscribe(data => {
       this.patientData = data;
-      console.log(data);
     })
   }
 }
