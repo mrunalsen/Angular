@@ -31,7 +31,6 @@ export class MentorFormContainerComponent implements OnInit {
   }
   addMentor(form: Mentor) {
     console.log(form);
-    // debugger
       this.mentorService.addMentor(form).subscribe((res:Mentor) => {
       alert('Post Success')
       this.router.navigateByUrl('mentor/list')

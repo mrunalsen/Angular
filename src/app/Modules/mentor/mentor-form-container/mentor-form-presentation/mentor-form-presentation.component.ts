@@ -49,7 +49,6 @@ export class MentorFormPresentationComponent implements OnInit {
   ngOnInit(): void {
     this.mentorFormpresenter.mentorFormData$.subscribe((res: Mentor) => {
       console.log('ok', res);
-      // debugger
       // this.add.emit(res);
       this.formTitle === 'Add Mentor' ? this.add.emit(res) : this.edit.emit(res); 
     })
