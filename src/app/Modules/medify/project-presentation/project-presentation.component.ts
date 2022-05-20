@@ -55,21 +55,23 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
     width: '100%',
     height: '200',
     legend: 'none',
-    bar: { groupWidth: "10" },
+    bar: { groupWidth: "25" },
     explorer: { axis: 'horizontal', keepInBounds: true },
     vAxis: {
       minorGridlines: { count: 0 },
-      gridlines: {
-        lineStyle: "dashed",
-      },
+      textStyle:{color: 'gray'},
+      viewWindowMode: "explicit", viewWindow:{ min: 0 }
+    },
+    hAxis:{
+      textStyle:{color: 'gray'},
     },
     series: {
-      0: { lineDashStyle: [2, 2] },
+      0: { lineDashStyle: [4, 4] },
     },
     colors: ['#7fb4be'],
     // chartArea: { width: '100%', height: '200' },
   };
-  @HostListener('window:resize', ['$event'])
+  // @HostListener('window:resize', ['$event'])
 onResize(event) {
   if(event.target.innerWidth > 620){
     console.log("they changed me ")
@@ -90,19 +92,19 @@ onResize(event) {
     if (this.selected == 1) {
       this.temper = this.temper.slice(-7)
       this.temper.forEach((some) => {
-        this.data.push([some.day, some.patient])
+        this.data.push([some.Date, some.Count])
       })
     }
-    else if (this.selected == 2) {
-      this.temper = this.temper.slice(-14, -7)
-      this.temper.forEach((some) => {
-        this.data.push([some.day, some.patient])
-      })
-    }
+    // else if (this.selected == 2) {
+    //   this.temper = this.temper.slice(-14, -7)
+    //   this.temper.forEach((some) => {
+    //     this.data.push([some.Date, some.Count])
+    //   })
+    // }
     else {
-      this.temper = this.temper.slice(-21)
+      this.temper = this.temper.slice(-31)
       this.temper.forEach((some) => {
-        this.data.push([some.day, some.patient])
+        this.data.push([some.Date, some.Count])
       })
     }
   }
