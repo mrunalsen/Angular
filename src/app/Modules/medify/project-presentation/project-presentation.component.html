@@ -56,12 +56,12 @@
             <div class="shadow rounded overflow-hidden">
                 <!-- column chart -->
                 <div class="d-flex justify-content-between">
-                    <span class="ps-4">Patient Visited</span>
+                    <span class="ps-4 fw-bold fs-5">Daily Created Prescription</span>
                     <div>
-                        <select name="week" id="1" (change)="update($event)">
-                            <option value="1">This Week</option>
-                            <option value="2">Last Week</option>
-                            <option value="3">Last Month</option>
+                        <select class="text-info border-0" name="week" id="1" (change)="update($event)">
+                            <option value="1" class="text-info">Last Seven Days</option>
+                            <!-- <option value="2">Last Week</option> -->
+                            <option value="3" class="text-info">Last Month</option>
                         </select>
                     </div>
                 </div>

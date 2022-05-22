@@ -1,89 +1,130 @@
 {
   "chart":[
     {
-      "day": "Mon",
-      "patient": 91
+      "Date": "20/04/2022",
+      "Count": -91
     },
     {
-      "day": "Tue",
-      "patient": 123
+      "Date": "21/04/2022",
+      "Count": 123
     },
     {
-      "day": "Wed",
-      "patient": 98
+      "Date": "22/04/2022",
+      "Count": 98
     },
     {
-      "day": "Thu",
-      "patient": 100
+      "Date": "23/04/2022",
+      "Count": 91
     },
     {
-      "day": "Fri",
-      "patient": 80
+      "Date": "24/04/2022",
+      "Count": 123
     },
     {
-      "day": "Sat",
-      "patient": 120
+      "Date": "25/04/2022",
+      "Count": 98
     },
     {
-      "day": "Sun",
-      "patient": 120
+      "Date": "26/04/2022",
+      "Count": 100
+    },
+    {
+      "Date": "27/04/2022",
+      "Count": 80
+    },
+    {
+      "Date": "28/04/2022",
+      "Count": 120
+    },
+    {
+      "Date": "29/04/2022",
+      "Count": 120
     },
   
     {
-      "day": "Mon",
-      "patient": 10
+      "Date": "30/04/2022",
+      "Count": 33
     },
     {
-      "day": "Tue",
-      "patient": 98
+      "Date": "01/05/2022",
+      "Count": 33
     },
     {
-      "day": "Wed",
-      "patient": 36
+      "Date": "02/05/2022",
+      "Count": 23
     },
     {
-      "day": "Thu",
-      "patient": 134
+      "Date": "03/05/2022",
+      "Count": 13
     },
     {
-      "day": "Fri",
-      "patient": 79
+      "Date": "04/05/2022",
+      "Count": 40
     },
     {
-      "day": "Sat",
-      "patient": 86
+      "Date": "05/05/2022",
+      "Count": 54
     },
     {
-      "day": "Sun",
-      "patient": 71
+      "Date": "06/05/2022",
+      "Count": 32
+    },
+  
+    {
+      "Date": "07/05/2022",
+      "Count": 10
     },
     {
-      "day": "Mon",
-      "patient": 700
+      "Date": "08/05/2022",
+      "Count": 98
     },
     {
-      "day": "Tue",
-      "patient": 600
+      "Date": "09/05/2022",
+      "Count": 36
     },
     {
-      "day": "Wed",
-      "patient": 500
+      "Date": "10/05/2022",
+      "Count": 134
     },
     {
-      "day": "Thu",
-      "patient": 400
+      "Date": "11/05/2022",
+      "Count": 79
     },
     {
-      "day": "Fri",
-      "patient": 300
+      "Date": "12/05/2022",
+      "Count": 86
     },
     {
-      "day": "Sat",
-      "patient": 200
+      "Date": "13/05/2022",
+      "Count": 71
     },
     {
-      "day": "Sun",
-      "patient": 100
+      "Date": "14/05/2022",
+      "Count": -7000000
+    },
+    {
+      "Date": "15/05/2022",
+      "Count": 600
+    },
+    {
+      "Date": "16/05/2022",
+      "Count": 500
+    },
+    {
+      "Date": "17/05/2022",
+      "Count": 400
+    },
+    {
+      "Date": "18/05/2022",
+      "Count": -300
+    },
+    {
+      "Date": "19/05/2022",
+      "Count": -200
+    },
+    {
+      "Date": "20/05/2022",
+      "Count": -100
     }
   
 ],

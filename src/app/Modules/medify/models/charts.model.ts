@@ -1,11 +1,11 @@
 export class Chart{
-    day: string;
-    patient: number;
+    Date: string;
+    Count: number;
 
     constructor(
-        day: string,
-        patient: number){
-            this.day = day,
-            this.patient = patient
+        Date: string,
+        Count: number){
+            this.Date = Date,
+            this.Count = Count
         }
 }
