@@ -1,14 +1,35 @@
-body{
+body {
   background-color: #eceaea;
 }
+
 p {
-    font-family: Lato;
-  }
-  .image{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+  font-family: Lato;
 }
-.container-fluid{
-background-color: white;
+
+.image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.container-fluid {
+  background-color: white;
+}
+
+.img-clip {
+  background-position: top;
+}
+
+.img-clip-container {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#dropdown-chart {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url(/assets/img/dropdown.svg);
+  background-repeat: no-repeat;
+  background-position: right;
 }

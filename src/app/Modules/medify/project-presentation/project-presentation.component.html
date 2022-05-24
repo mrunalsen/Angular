@@ -1,23 +1,22 @@
 <!-- start: wrapper -->
-<div class="wrapper h-100">
+<div class="wrapper p-3 h-100">
     <!-- start: row -->
-    <div class="row g-4 h-100 overflow-auto">
+    <div class="row g-4 px-0">
         <!-- start: doctor's-intro -->
         <div class="col-md-7 col-12">
-            <div class="d-flex justify-content-between p-3 h-100 shadow rounded">
-                <figure>
-                    <img src="assets/image/pexels-marta-dzedyshko-2067396 (1).jpg" style="height: 60px; " alt="">
+            <div class="d-flex justify-content-between h-100 bg-light rounded position-relative">
+                <figure class="m-0 img-clip-container">
+                    <img class=" img-clip">
                 </figure>
                 <div>
                     <h3 class="">
-                        Hello Dr. {{firstName}}, <span class="text-primary">Good Morning</span>
+                        <!-- Hello Dr. {{firstName}}, <span class="text-primary">{{this.greetMsg}}</span> -->
                     </h3>
-                    <p class="text-gray m-0">Have a nice day and don't forget to take</p>
-                    <p class="text-gray">care of your health!</p>
-                    <!-- <span class="hero-text text-gray">Have a nice day and don't forget to take <br> care of your health!</span> -->
+                    <span class="hero-text text-gray">Have a nice day and don't forget to take care of your
+                        health!</span>
                 </div>
-                <figure>
-                    <img src="" alt="Doctor's Image">
+                <figure class="position-relative mb-0 medicine-bro">
+                    <img class="" src="assets/img/medicine-bro-1.svg" alt="Doctor's Image">
                 </figure>
             </div>
         </div>
@@ -25,12 +24,11 @@
 
         <!-- start: numbers of pharmacies and patient -->
         <div class="col-md-5 col-12">
-            <div class="shadow d-flex h-100 p-1">
-                <div class="d-flex col-6 align-items-center justify-content-between border-end border-dark p-3">
+            <div class="d-flex bg-light h-100 rounded">
+                <div class="d-flex col-6 align-items-center border-end border-dark content-padding">
                     <div class="pe-3">
-                        <figure>
-                            <img src="assets/image/pexels-marta-dzedyshko-2067396 (1).jpg" style="height: 60px;"
-                                alt="Pharma-logo">
+                        <figure class="m-0 ">
+                            <img src="assets/img/Pharmacies.svg" alt="Pharma-logo">
                         </figure>
                     </div>
                     <div class="d-flex flex-column">
@@ -38,9 +36,11 @@
                         <span class="text-gray">Pharmacies</span>
                     </div>
                 </div>
-                <div class="border-0 col-6 d-flex align-items-center patient justify-content-between p-3">
+                <div class="col-6 d-flex align-items-center content-padding">
                     <div class="pe-3">
-                        <img src="" alt="Patient-logo">
+                        <figure class="m-0 mt-n2">
+                            <img src="assets/images/Patient.svg" alt="Patient-logo">
+                        </figure>
                     </div>
                     <div class="d-flex flex-column">
                         <span class="">58</span>
@@ -55,107 +55,23 @@
         <div class="col-md-7 col-12">
             <div class="shadow rounded overflow-hidden">
                 <!-- column chart -->
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between pt-4">
                     <span class="ps-4 fw-bold fs-5">Daily Created Prescription</span>
                     <div>
-                        <select class="text-info border-0" name="week" id="1" (change)="update($event)">
-                            <option value="1" class="text-info">Last Seven Days</option>
+                        <select class="text-info border-0" name="week" id="dropdown-chart" (change)="update($event)">
+                            <option value="1" class="text-info">This Week</option>
                             <!-- <option value="2">Last Week</option> -->
-                            <option value="3" class="text-info">Last Month</option>
+                            <option value="3" class="text-info">Last 30 Days</option>
                         </select>
                     </div>
                 </div>
-               <div>
-                <google-chart class="overflow w-100 h-100" [type]="type" [data]="data" [options]="options"
-                >
-                <!-- [width]="width" [height]="height" -->
-            </google-chart>
-               </div>
+                <div class="">
+                    <google-chart class="w-100 h-100" [type]="type" [data]="data" [options]="options"></google-chart>
+                </div>
             </div>
         </div>
         <!-- end: google-chart -->
 
-        <!-- start: list of pharmacies -->
-        <div class="col-md-5 col-12">
-            <div class="shadow rounded h-100 p-3">
-                <div class="d-flex justify-content-between border-bottom">
-                    <span>Pharmacies</span>
-                    <a href="#">View all</a>
-                </div>
-                <div class="d-flex justify-content-between pt-3" *ngFor="let catch of Data">
-                    <div class="d-flex mb-3">
-                        <figure class="m-0 pe-3"><img src="assets/image/pexels-photo-2762942.jpeg" class="image"
-                                alt="Medical-Image"></figure>
-                        <span class="d-flex align-items-center">{{catch.medical}}</span>
-                    </div>
-                    <div class="text-gray text-end d-flex flex-column">
-                        <span>{{catch.number}}</span>
-                        <span>{{catch.address}}</span>
-                    </div>
-                </div>
-            </div>
-            <!-- end: list of pharmacies -->
-        </div>
-        <div class="col-md-7 col-12">
-            <div class="shadow rounded h-100">
-                <!-- start: view prescription -->
-                <div class="d-flex justify-content-between border-bottom">
-                    <span>View Prescription</span>
-                    <a href="#">View all</a>
-                </div>
-                <!-- start: view-prescription-1 -->
-                <div class="d-flex justify-content-between" *ngFor="let pre of preData">
-                    <div class="d-flex img">
-                        <figure class="pe-3">
-                            <img src="/assets/image/logo-img.png" class="image" alt="Patient's Picture">
-                        </figure>
-                        <div class="d-flex flex-column">
-                            <span>{{pre.name}}</span>
-                            <!-- <span class="text-gray">{{pre.disease}}</span> -->
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div
-                            [ngClass]="{'text-success': pre.status == 'Approved', 'text-warning': pre.status == 'Pending', 'text-danger': pre.status == 'Rejected'  } ">
-                            {{pre.status}}
-                        </div>
-                        <div class="text-gray">by {{pre.medical}}</div>
-                    </div>
-                    <span class="text-gray">
-                        {{pre.time}}
-                    </span>
-                </div>
-            </div>
-            <!-- end: view-prescription-1 -->
-        </div>
-        <!-- end: view prescription -->
-
-        <!-- start: list of patient -->
-        <div class="col-md-5 col-12">
-            <div class="shadow rounded h-100">
-                <div class="d-flex justify-content-between border-bottom">
-                    <span>My Patient</span>
-                    <a href="#">View all</a>
-                </div>
-
-                <div class="d-flex justify-content-between" *ngFor="let patient of patientData">
-                    <div class="d-flex">
-                        <figure>
-                            <img src="assets/image/logo-img.png" class="image" alt="Image">
-                        </figure>
-                        <div class="d-flex flex-column">
-                            <span>{{patient.name}}</span>
-                            <span class="gender text-gray">{{patient.gender}} • {{patient.age}} yrs</span>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column patient-contact text-gray text-end">
-                        <span>{{patient.time}}</span>
-                        <span>{{patient.mobile}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end: list of patient -->
     </div>
     <!-- end: row -->
 </div>
