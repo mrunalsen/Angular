@@ -12,3 +12,17 @@ p {
 .container-fluid{
 background-color: white;
 }
+.chartDropDown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url(/assets/img/Group\ 137.svg);
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  margin-right: 2rem;
+  // padding: 1rem;
+  padding-right: 2rem;
+}

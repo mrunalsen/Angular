@@ -1,1 +1,15 @@
-<h2>Hi, Hello</h2>
+<div class="progress">
+   <div class="progress-bar" [style.width]="barwidth + '%'"></div>
+ </div>
+<div>
+   <div *ngIf="!show" id="1" class="form-group">
+     <label for="email">Email address:</label>
+     <input type="email" class="form-control" id="email">
+   </div>
+   <div *ngIf="show"  id="2" class="form-group">
+     <label for="pwd">Password:</label>
+     <input type="password" class="form-control" id="pwd">
+   </div>
+   <button (click)="previous()"  class="btn btn-primary"><a href="#1"></a>Previous</button>
+   <button (click)="next()"  class="btn btn-primary"><a href="#2"></a>Next</button>
+ </div>

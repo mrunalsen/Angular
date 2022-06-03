@@ -19,7 +19,6 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { BindService } from './Modules/bind/bind.service';
 import { SharedModule } from './shared/shared.module';
 import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
-import { GoogleChartsModule } from 'angular-google-charts';
 
 
 
@@ -45,7 +44,6 @@ import { GoogleChartsModule } from 'angular-google-charts';
     TrialModule,
     BrowserAnimationsModule,
     OverlayModule,
-    GoogleChartsModule
   ],
   providers: [
     BindService,

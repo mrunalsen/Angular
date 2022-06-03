@@ -58,19 +58,13 @@
                 <div class="d-flex justify-content-between">
                     <span class="ps-4 fw-bold fs-5">Daily Created Prescription</span>
                     <div>
-                        <select class="text-info border-0" name="week" id="1" (change)="update($event)">
-                            <option value="1" class="text-info">Last Seven Days</option>
+                        <select class="text-info border-0 chartDropDown" name="week" id="1" (change)="update($event)">
+                            <option value="1" class="text-info">This Week</option>
                             <!-- <option value="2">Last Week</option> -->
-                            <option value="3" class="text-info">Last Month</option>
+                            <option value="3" class="text-info">This Month</option>
                         </select>
                     </div>
                 </div>
-               <div>
-                <google-chart class="overflow w-100 h-100" [type]="type" [data]="data" [options]="options"
-                >
-                <!-- [width]="width" [height]="height" -->
-            </google-chart>
-               </div>
             </div>
         </div>
         <!-- end: google-chart -->
@@ -115,10 +109,6 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div
-                            [ngClass]="{'text-success': pre.status == 'Approved', 'text-warning': pre.status == 'Pending', 'text-danger': pre.status == 'Rejected'  } ">
-                            {{pre.status}}
-                        </div>
                         <div class="text-gray">by {{pre.medical}}</div>
                     </div>
                     <span class="text-gray">

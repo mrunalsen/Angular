@@ -1,5 +1,4 @@
 import { AfterContentInit, Component, HostListener, OnInit } from '@angular/core';
-import { ChartType } from 'angular-google-charts';
 import { Chart } from '../models/charts.model';
 import { Medical, Patient, Prescription } from '../models/medify.model';
 import { ChartsService } from '../project-presenter/charts.service';
@@ -29,7 +28,7 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
 
   //start: column chart 
 
-  public type = ChartType.ColumnChart;
+  // public type = ChartType.ColumnChart;
 
   public columnData: Chart[];
 

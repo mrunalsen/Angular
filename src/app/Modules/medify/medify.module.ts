@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { MedifyRoutingModule } from './medify-routing.module';
 import { MedifyComponent } from './medify.component';
 import { ProjectPresentationComponent } from './project-presentation/project-presentation.component';
-import { GoogleChartsModule } from 'angular-google-charts';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
@@ -16,7 +15,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     MedifyRoutingModule,
-    GoogleChartsModule,
     SharedModule
   ]
 })

@@ -1,5 +1,5 @@
 {
-  "chart":[
+  "chart": [
     {
       "Date": "20/04/2022",
       "Count": -91
@@ -40,7 +40,6 @@
       "Date": "29/04/2022",
       "Count": 120
     },
-  
     {
       "Date": "30/04/2022",
       "Count": 33
@@ -69,7 +68,6 @@
       "Date": "06/05/2022",
       "Count": 32
     },
-  
     {
       "Date": "07/05/2022",
       "Count": 10
@@ -126,9 +124,8 @@
       "Date": "20/05/2022",
       "Count": -100
     }
-  
-],
-  "prescription":[
+  ],
+  "prescription": [
     {
       "name": "Sam Bhatt",
       "disease": "Headache, Fever",
@@ -151,7 +148,7 @@
       "time": "12:35 AM"
     }
   ],
-  "patient":[
+  "patient": [
     {
       "name": "Sara Paul",
       "gender": "Female",
@@ -165,7 +162,6 @@
       "age": 58,
       "time": "1:00 AM",
       "mobile": 9999988888
-
     },
     {
       "name": "Ammy Richard",
@@ -267,16 +263,6 @@
     }
   ],
   "formData": [
-    {
-      "id": 1,
-      "firstName": "Joe Bloggs",
-      "email": "joe@bloggs.com",
-      "contact": "8460849046",
-      "city": "Valsad",
-      "gender": "Male",
-      "date": "2022-02-19",
-      "department": "css"
-    },
     {
       "id": 2,
       "firstName": "Henal",

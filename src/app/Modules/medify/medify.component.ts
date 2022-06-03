@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartType } from 'angular-google-charts';
 var google : any
 @Component({
   selector: 'app-medify',
@@ -9,7 +8,7 @@ var google : any
 export class MedifyComponent  {
   
   title = 'Siria';
-   type = ChartType.BarChart;
+   // type = ChartType.BarChart;
    data = [
       ["2012", 900, 390],
       ["2013", 1000, 400],
