@@ -16,13 +16,13 @@ export class HelloComponent implements OnInit {
 
   next(){
     this.show=true;
-    this.barwidth=20;
+    this.barwidth=100;
     this.buttonshow=false;
   }
 
   previous(){
     this.show=false;
-    this.barwidth=10;
+    this.barwidth=0;
   }
 
 }

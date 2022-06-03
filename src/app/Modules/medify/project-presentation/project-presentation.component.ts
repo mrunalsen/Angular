@@ -26,7 +26,6 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
 
   }
 
-  public type = ChartType.ColumnChart;
   public columnData: Chart[];
 
   getChartData() {
