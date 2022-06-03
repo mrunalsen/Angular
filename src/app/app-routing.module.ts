@@ -34,6 +34,8 @@ const routes: Routes = [
   { path: 'file-upload', loadChildren: () => import('./Modules/file-upload/file-upload.module').then(m => m.FileUploadModule) },
 
   { path: 'medify', loadChildren: () => import('./Modules/medify/medify.module').then(m => m.MedifyModule) },
+  
+  { path: 'bar', loadChildren: () => import('./Modules/bar/bar.module').then(m => m.BarModule) },
 ];
 
 @NgModule({
