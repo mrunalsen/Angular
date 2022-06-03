@@ -2,18 +2,55 @@
   <div class="progress">
     <div class="progress-bar" [style.width]="barwidth + '%'"></div>
   </div>
-  <div class="pt-3">
-    <div *ngIf="!show" id="1" class="form-group">
+  <!-- Tab 1 -->
+  <div class="pt-3" *ngIf="!tab1" id="1">
+    <h2>Tab 1</h2>
+    <div class="form-group">
       <label for="email">Email address:</label>
-      <input type="email" class="form-control" id="email">
-    </div>
-    <div *ngIf="show" id="2" class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
+      <input type="email" class="form-control">
     </div>
     <div class="pt-3">
-      <button (click)="previous()" class="btn btn-primary me-2"><a href="#1"></a>Previous</button>
-      <button (click)="next()" class="btn btn-primary ms-2"><a href="#2"></a>Next</button>
+      <button disabled class="btn btn-primary me-2">Previous</button>
+      <button (click)="next1()" class="btn btn-primary ms-2"><a href="#2"></a>Next</button>
+    </div>
+  </div>
+
+  <!-- Tab 2 -->
+  <div class="pt-3" *ngIf="tab2" id="2">
+    <h2>Tab 2</h2>
+    <div class="form-group">
+      <label for="text">Username</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="pt-3">
+      <button (click)="previous2()" class="btn btn-primary me-2"><a href="#1"></a>Previous</button>
+      <button (click)="next2()" class="btn btn-primary ms-2"><a href="#3"></a>Next</button>
+    </div>
+  </div>
+
+  <!-- Tab 3 -->
+  <div class="pt-3" *ngIf="tab3" id="3">
+    <h2>Tab 3</h2>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control">
+    </div>
+    <div class="pt-3">
+      <button (click)="previous3()" class="btn btn-primary me-2"><a href="#2"></a>Previous</button>
+      <button (click)="next3()" class="btn btn-primary ms-2"><a href="#3"></a>Next</button>
+    </div>
+  </div>
+
+  <!-- Tab 4 -->
+  <div class="pt-3" *ngIf="tab4" id="4">
+    <h2>Tab 4</h2>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="pt-3">
+      <button (click)="previous4()" class="btn btn-primary me-2"><a href="#3"></a>Previous</button>
+      <button disabled class="btn btn-primary ms-2">Next</button>
     </div>
   </div>
 </div>
