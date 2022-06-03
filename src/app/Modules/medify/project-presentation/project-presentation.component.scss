@@ -1,28 +1,35 @@
-body{
+body {
   background-color: #eceaea;
 }
+
 p {
-    font-family: Lato;
-  }
-  .image{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+  font-family: Lato;
 }
-.container-fluid{
-background-color: white;
+
+.image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
-.chartDropDown {
+
+.container-fluid {
+  background-color: white;
+}
+
+.img-clip {
+  background-position: top;
+}
+
+.img-clip-container {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#dropdown-chart {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: transparent;
-  background-image: url(/assets/img/Group\ 137.svg);
+  background-image: url(/assets/img/dropdown.svg);
   background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 5px;
-  border: 1px solid #dfdfdf;
-  border-radius: 2px;
-  margin-right: 2rem;
-  // padding: 1rem;
-  padding-right: 2rem;
+  background-position: right;
 }

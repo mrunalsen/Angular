@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, HostListener, OnInit } from '@angular/core';
+import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { Chart } from '../models/charts.model';
 import { Medical, Patient, Prescription } from '../models/medify.model';
 import { ChartsService } from '../project-presenter/charts.service';
@@ -14,7 +14,7 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
   constructor(
     private doctorService: ProjectPresenterService,
     private chartService: ChartsService,
-    
+
   ) { }
   ngAfterContentInit(): void {
   }
@@ -26,10 +26,7 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
 
   }
 
-  //start: column chart 
-
-  // public type = ChartType.ColumnChart;
-
+  public type = ChartType.ColumnChart;
   public columnData: Chart[];
 
   getChartData() {
@@ -58,29 +55,29 @@ export class ProjectPresentationComponent implements OnInit, AfterContentInit {
     explorer: { axis: 'horizontal', keepInBounds: true },
     vAxis: {
       minorGridlines: { count: 0 },
-      textStyle:{color: 'gray'},
-      viewWindowMode: "explicit", viewWindow:{ min: 0 }
+      textStyle: { color: 'gray' },
+      viewWindowMode: "explicit", viewWindow: { min: 0 }
     },
-    hAxis:{
-      textStyle:{color: 'gray'},
+    hAxis: {
+      textStyle: { color: 'gray' },
     },
     series: {
       0: { lineDashStyle: [4, 4] },
     },
     colors: ['#7fb4be'],
-    // chartArea: { width: '100%', height: '200' },
+    chartArea: { width: '90%', height: '100' },
   };
   // @HostListener('window:resize', ['$event'])
-onResize(event) {
-  if(event.target.innerWidth > 620){
-    console.log("they changed me ")
-    this.options.bar.groupWidth = "50";
+  onResize(event) {
+    if (event.target.innerWidth > 620) {
+      console.log("they changed me ")
+      this.options.bar.groupWidth = "50";
+    }
   }
-}
 
   // width = 800;
   // height = 400;
-  
+
   public selected: number
   public temper: Chart[]
 
@@ -91,7 +88,12 @@ onResize(event) {
     if (this.selected == 1) {
       this.temper = this.temper.slice(-7)
       this.temper.forEach((some) => {
-        this.data.push([some.Date, some.Count])
+        let d = new Date(some.Date);
+        console.log(d);
+
+        let dayName = d.toString().split(' ')[0]
+        this.data.push([dayName, some.Count])
+        console.log(dayName);
       })
     }
     // else if (this.selected == 2) {
@@ -103,7 +105,12 @@ onResize(event) {
     else {
       this.temper = this.temper.slice(-31)
       this.temper.forEach((some) => {
-        this.data.push([some.Date, some.Count])
+        let todayTime = new Date(some.Date);
+        let month = todayTime.getMonth() + 1;
+        let day = todayTime.getDate();
+        let year =todayTime.getFullYear();
+        let date = month + "/" + day + "/" + year;
+        this.data.push([date, some.Count])
       })
     }
   }
