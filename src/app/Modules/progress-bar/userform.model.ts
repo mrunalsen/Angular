@@ -1,4 +1,4 @@
-export class formdetails{
+export class progressForm{
     public email: string;
     public username: string;
     public password: string;
