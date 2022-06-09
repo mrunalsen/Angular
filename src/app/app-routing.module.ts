@@ -36,6 +36,8 @@ const routes: Routes = [
   { path: 'medify', loadChildren: () => import('./Modules/medify/medify.module').then(m => m.MedifyModule) },
   
   { path: 'bar', loadChildren: () => import('./Modules/bar/bar.module').then(m => m.BarModule) },
+  
+  { path: 'progress', loadChildren: () => import('./Modules/progress-bar/progress-bar.module').then(m => m.ProgressBarModule) },
 ];
 
 @NgModule({
