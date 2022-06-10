@@ -38,6 +38,7 @@ const routes: Routes = [
   { path: 'bar', loadChildren: () => import('./Modules/bar/bar.module').then(m => m.BarModule) },
   
   { path: 'progress', loadChildren: () => import('./Modules/progress-bar/progress-bar.module').then(m => m.ProgressBarModule) },
+  { path: 'print', loadChildren: () => import('./Modules/print/print.module').then(m => m.PrintModule) },
 ];
 
 @NgModule({

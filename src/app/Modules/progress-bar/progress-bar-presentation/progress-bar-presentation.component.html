@@ -1,99 +1,102 @@
 <div class="p-5 w-100">
-    <div class=>
-        <div class="row w-100">
-            <div class="col-4 bar" [ngClass]="{'active':iscontact}"></div>
-            <div class="col-4 bar" [ngClass]="{'active':isinfoform}"></div>
-            <div class="col-4 bar" [ngClass]="{'active':iscontactform}"></div>
-            <a href="1">1</a>
-        </div>
-        <div>
-            <form [formGroup]="info" *ngIf="!iscontact" id="1">
-                <div class="mb-3">
-                    <label for="firstname">First Name: </label>
-                    <input type="text" id="firstname" name="firstname" placeholder="Enter first Name"
-                        formControlName="firstname" class="form-control" />
-                </div>
-                <div *ngIf="getvalue['firstname'].touched && getvalue['firstname'].invalid">
-                    <small class="text-danger" *ngIf="getvalue['firstname'].errors && getvalue['firstname'].errors['required']">
-                      *firstname is required
-                    </small>
-                  </div>
-
-                <div class="mb-3">
-                    <label for="lastname">Last Name: </label>
-                    <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name"
-                        formControlName="lastname" class="form-control" />
-                </div>
-                <div *ngIf="getvalue['lastname'].touched && getvalue['lastname'].invalid">
-                    <small class="text-danger" *ngIf="getvalue['lastname'].errors && getvalue['lastname'].errors['required']">
-                      *lastname is required
-                    </small>
-                  </div>
-
-                <div class="mb-3">
-                    <label for="username">username: </label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" formControlName="username"
-                        class="form-control" />
-                </div>
-                <div *ngIf="getvalue['username'].touched && getvalue['username'].invalid">
-                    <small class="text-danger" *ngIf="getvalue['username'].errors && getvalue['username'].errors['required']">
-                      *username is required
-                    </small>
-                  </div>
-
-            </form>
-            <form [formGroup]="contact" *ngIf="iscontact" id="2">
-                <div class="mb-3">
-                    <label for="contact">Contact No.: </label>
-                    <input type="text" id="contact" name="contact" placeholder="Enter Contact number"
-                        formControlName="contact" class="form-control" />
-                </div>
-                <div class="mb-3">
-                    <label for="email">e-mail: </label>
-                    <input type="email" id="email" name="email" placeholder="xyzzyx@gmail.com" formControlName="email"
-                        class="form-control" />
-                </div>
-            </form>
-        </div>
-
-        <div>
-            <button class="btn btn-primary me-2" (click)="previous()">Previous</button>
-            <button class="btn btn-success"  [disabled]="info.invalid" (click)="next()">Next</button>
-        </div>
+  <div class=>
+    <div class="row w-100">
+      <div class="col-4 bar position-relative" [ngClass]="{'active':iscontact}"><span
+          class="position-absolute bar-text">1</span></div>
+      <div class="col-4 bar position-relative" [ngClass]="{'active':isinfoform}"><span
+          class="position-absolute bar-text">2</span></div>
+      <div class="col-4 bar position-relative" [ngClass]="{'active':iscontactform}"><span
+          class="position-absolute bar-text">3</span></div>
     </div>
+    <div>
+      <form [formGroup]="info" *ngIf="!iscontact" id="1">
+        <div class="mb-3">
+          <label for="firstname">First Name: </label>
+          <input type="text" id="firstname" name="firstname" placeholder="Enter first Name" formControlName="firstname"
+            class="form-control" />
+        </div>
+        <div *ngIf="getvalue['firstname'].touched && getvalue['firstname'].invalid">
+          <small class="text-danger" *ngIf="getvalue['firstname'].errors && getvalue['firstname'].errors['required']">
+            *firstname is required
+          </small>
+        </div>
+
+        <div class="mb-3">
+          <label for="lastname">Last Name: </label>
+          <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" formControlName="lastname"
+            class="form-control" />
+        </div>
+        <div *ngIf="getvalue['lastname'].touched && getvalue['lastname'].invalid">
+          <small class="text-danger" *ngIf="getvalue['lastname'].errors && getvalue['lastname'].errors['required']">
+            *lastname is required
+          </small>
+        </div>
+
+        <div class="mb-3">
+          <label for="username">username: </label>
+          <input type="text" id="username" name="username" placeholder="Enter your username" formControlName="username"
+            class="form-control" />
+        </div>
+        <div *ngIf="getvalue['username'].touched && getvalue['username'].invalid">
+          <small class="text-danger" *ngIf="getvalue['username'].errors && getvalue['username'].errors['required']">
+            *username is required
+          </small>
+        </div>
+      </form>
+
+      
+      <form [formGroup]="contact" *ngIf="iscontact" id="2">
+        <div class="mb-3">
+          <label for="contact">Contact No.: </label>
+          <input type="text" id="contact" name="contact" placeholder="Enter Contact number" formControlName="contact"
+            class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="email">e-mail: </label>
+          <input type="email" id="email" name="email" placeholder="xyzzyx@gmail.com" formControlName="email"
+            class="form-control" />
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <button class="btn btn-primary me-2" (click)="previous()">Previous</button>
+      <button class="btn btn-success" [disabled]="info.invalid" (click)="next()">Next</button>
+    </div>
+  </div>
 </div>
 <ul>
 
 
-<!-- Stepper Trial -->
-<li class="container__item">
+  <!-- Stepper Trial -->
+  <li class="container__item">
     <h2>Trial</h2>
     <div class="stepper stepper--flexbox">
-      <input class="stepper__input" id="stepper-flex-0" name="stepper-flex" type="radio" checked="checked"/>
+      <input class="stepper__input" id="stepper-flex-0" name="stepper-flex" type="radio" checked="checked" />
       <div class="stepper__step">
         <label class="stepper__button" for="stepper-flex-0">First</label>
       </div>
-      <input class="stepper__input" id="stepper-flex-1" name="stepper-flex" type="radio"/>
+      <input class="stepper__input" id="stepper-flex-1" name="stepper-flex" type="radio" />
       <div class="stepper__step">
         <label class="stepper__button" for="stepper-flex-1">Second</label>
       </div>
-      <input class="stepper__input" id="stepper-flex-2" name="stepper-flex" type="radio"/>
+      <input class="stepper__input" id="stepper-flex-2" name="stepper-flex" type="radio" />
       <div class="stepper__step">
         <label class="stepper__button" for="stepper-flex-2">Third</label>
       </div>
-      <input class="stepper__input" id="stepper-flex-3" name="stepper-flex" type="radio"/>
+      <input class="stepper__input" id="stepper-flex-3" name="stepper-flex" type="radio" />
       <div class="stepper__step">
         <label class="stepper__button" for="stepper-flex-3">Fourth</label>
       </div>
-      <input class="stepper__input" id="stepper-flex-4" name="stepper-flex" type="radio"/>
+      <input class="stepper__input" id="stepper-flex-4" name="stepper-flex" type="radio" />
       <div class="stepper__step">
         <label class="stepper__button" for="stepper-flex-4">Fifth</label>
       </div>
-      <input class="stepper__input" id="stepper-flex-5" name="stepper-flex" type="radio"/>
+      <input class="stepper__input" id="stepper-flex-5" name="stepper-flex" type="radio" />
       <div class="stepper__step">
         <label class="stepper__button" for="stepper-flex-5">Sixth</label>
       </div>
-      <input class="stepper__input" id="stepper-flex-6" name="stepper-flex" type="radio"/>
+      <input class="stepper__input" id="stepper-flex-6" name="stepper-flex" type="radio" />
       <div class="stepper__step">
         <label class="stepper__button" for="stepper-flex-6">Seventh</label>
       </div>
