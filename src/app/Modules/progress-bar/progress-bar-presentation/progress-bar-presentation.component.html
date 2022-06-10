@@ -1,12 +1,13 @@
 <div class="p-5 w-100">
     <div class=>
-        <div class="d-flex w-100">
-            <div class="col-3 bar" [ngClass]="{'active':iscontact}"></div>
-            <div class="col-3 bar" [ngClass]="{'active':isinfoform}"></div>
-            <div class="col-3 bar" [ngClass]="{'active':iscontactform}"></div>
+        <div class="row w-100">
+            <div class="col-4 bar" [ngClass]="{'active':iscontact}"></div>
+            <div class="col-4 bar" [ngClass]="{'active':isinfoform}"></div>
+            <div class="col-4 bar" [ngClass]="{'active':iscontactform}"></div>
+            <a href="1">1</a>
         </div>
         <div>
-            <form [formGroup]="info" *ngIf="!iscontact">
+            <form [formGroup]="info" *ngIf="!iscontact" id="1">
                 <div class="mb-3">
                     <label for="firstname">First Name: </label>
                     <input type="text" id="firstname" name="firstname" placeholder="Enter first Name"
@@ -41,7 +42,7 @@
                   </div>
 
             </form>
-            <form [formGroup]="contact" *ngIf="iscontact">
+            <form [formGroup]="contact" *ngIf="iscontact" id="2">
                 <div class="mb-3">
                     <label for="contact">Contact No.: </label>
                     <input type="text" id="contact" name="contact" placeholder="Enter Contact number"
@@ -62,43 +63,39 @@
     </div>
 </div>
 <ul>
+
+
+<!-- Stepper Trial -->
 <li class="container__item">
-    <h2>with flexbox</h2>
+    <h2>Trial</h2>
     <div class="stepper stepper--flexbox">
       <input class="stepper__input" id="stepper-flex-0" name="stepper-flex" type="radio" checked="checked"/>
       <div class="stepper__step">
-        <label class="stepper__button" for="stepper-flex-0">chocolate</label>
-        <p class="stepper__content" for="stepper-flex-0">crunchy</p>
+        <label class="stepper__button" for="stepper-flex-0">First</label>
       </div>
       <input class="stepper__input" id="stepper-flex-1" name="stepper-flex" type="radio"/>
       <div class="stepper__step">
-        <label class="stepper__button" for="stepper-flex-1">vanilla</label>
-        <p class="stepper__content" for="stepper-flex-1">coming from heaven</p>
+        <label class="stepper__button" for="stepper-flex-1">Second</label>
       </div>
       <input class="stepper__input" id="stepper-flex-2" name="stepper-flex" type="radio"/>
       <div class="stepper__step">
-        <label class="stepper__button" for="stepper-flex-2">strawberry</label>
-        <p class="stepper__content" for="stepper-flex-2">red and sweet</p>
+        <label class="stepper__button" for="stepper-flex-2">Third</label>
       </div>
       <input class="stepper__input" id="stepper-flex-3" name="stepper-flex" type="radio"/>
       <div class="stepper__step">
-        <label class="stepper__button" for="stepper-flex-3">manga</label>
-        <p class="stepper__content" for="stepper-flex-3">we need more yellow</p>
+        <label class="stepper__button" for="stepper-flex-3">Fourth</label>
       </div>
       <input class="stepper__input" id="stepper-flex-4" name="stepper-flex" type="radio"/>
       <div class="stepper__step">
-        <label class="stepper__button" for="stepper-flex-4">banana</label>
-        <p class="stepper__content" for="stepper-flex-4">banananananana Batman!</p>
+        <label class="stepper__button" for="stepper-flex-4">Fifth</label>
       </div>
       <input class="stepper__input" id="stepper-flex-5" name="stepper-flex" type="radio"/>
       <div class="stepper__step">
-        <label class="stepper__button" for="stepper-flex-5">apple</label>
-        <p class="stepper__content" for="stepper-flex-5">The one that don't make you sleep</p>
+        <label class="stepper__button" for="stepper-flex-5">Sixth</label>
       </div>
       <input class="stepper__input" id="stepper-flex-6" name="stepper-flex" type="radio"/>
       <div class="stepper__step">
-        <label class="stepper__button" for="stepper-flex-6">orange</label>
-        <p class="stepper__content" for="stepper-flex-6">only for the juice</p>
+        <label class="stepper__button" for="stepper-flex-6">Seventh</label>
       </div>
     </div>
   </li>
