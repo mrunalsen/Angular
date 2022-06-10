@@ -1,45 +1,105 @@
-<form [formGroup]="progressForm" (ngSubmit)="onSubmit()">
-    <legend>
-        <h2>FORM :&nbsp;&nbsp; </h2>
-    </legend><br>
-        <div class="form-group">
-            <label>Name</label>
-            <input
-              type="text"
-              formControlName="name"
-              class="form-control"
-            />
-            <!-- <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback alert alert-danger">
-              <div *ngIf="f['firstname'].errors['required']">Firstname is required</div>
-            </div> -->
-          </div> <br>
+<div class="p-5 w-100">
+    <div class=>
+        <div class="d-flex w-100">
+            <div class="col-3 bar" [ngClass]="{'active':iscontact}"></div>
+            <div class="col-3 bar" [ngClass]="{'active':isinfoform}"></div>
+            <div class="col-3 bar" [ngClass]="{'active':iscontactform}"></div>
+        </div>
+        <div>
+            <form [formGroup]="info" *ngIf="!iscontact">
+                <div class="mb-3">
+                    <label for="firstname">First Name: </label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Enter first Name"
+                        formControlName="firstname" class="form-control" />
+                </div>
+                <div *ngIf="getvalue['firstname'].touched && getvalue['firstname'].invalid">
+                    <small class="text-danger" *ngIf="getvalue['firstname'].errors && getvalue['firstname'].errors['required']">
+                      *firstname is required
+                    </small>
+                  </div>
 
+                <div class="mb-3">
+                    <label for="lastname">Last Name: </label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name"
+                        formControlName="lastname" class="form-control" />
+                </div>
+                <div *ngIf="getvalue['lastname'].touched && getvalue['lastname'].invalid">
+                    <small class="text-danger" *ngIf="getvalue['lastname'].errors && getvalue['lastname'].errors['required']">
+                      *lastname is required
+                    </small>
+                  </div>
 
-        <div class="form-group">
-            <label for="age">Age : &nbsp;</label>
-            <input
-                type="number"
-                formControlName="age"
-                id="age"
-                class="form-control"
-                >
-            <div *ngIf="(['email'].touched || submitted) && ['email'].invalid" class="alert alert-danger">
-                <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
-                <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
-            </div>
-        </div><br>
-        
+                <div class="mb-3">
+                    <label for="username">username: </label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" formControlName="username"
+                        class="form-control" />
+                </div>
+                <div *ngIf="getvalue['username'].touched && getvalue['username'].invalid">
+                    <small class="text-danger" *ngIf="getvalue['username'].errors && getvalue['username'].errors['required']">
+                      *username is required
+                    </small>
+                  </div>
+
+            </form>
+            <form [formGroup]="contact" *ngIf="iscontact">
+                <div class="mb-3">
+                    <label for="contact">Contact No.: </label>
+                    <input type="text" id="contact" name="contact" placeholder="Enter Contact number"
+                        formControlName="contact" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="email">e-mail: </label>
+                    <input type="email" id="email" name="email" placeholder="xyzzyx@gmail.com" formControlName="email"
+                        class="form-control" />
+                </div>
+            </form>
+        </div>
 
         <div>
-            <label for="gender">Gender :&nbsp; &nbsp; </label>
-            <input type="radio" formControlName="gender" id="male" name="gender" value="male">
-            <label for="male">Male &nbsp; </label>
-            <input type="radio" formControlName="gender" id="female" name="gender" value="female">
-            <label for="female">Female</label><br>
-        </div><br>
-
-
-        <button type="submit" class="btn button-primary">Submit</button>
-        <button type="reset" class="btn button-primary">Reset</button>
-      
-</form>
+            <button class="btn btn-primary me-2" (click)="previous()">Previous</button>
+            <button class="btn btn-success"  [disabled]="info.invalid" (click)="next()">Next</button>
+        </div>
+    </div>
+</div>
+<ul>
+<li class="container__item">
+    <h2>with flexbox</h2>
+    <div class="stepper stepper--flexbox">
+      <input class="stepper__input" id="stepper-flex-0" name="stepper-flex" type="radio" checked="checked"/>
+      <div class="stepper__step">
+        <label class="stepper__button" for="stepper-flex-0">chocolate</label>
+        <p class="stepper__content" for="stepper-flex-0">crunchy</p>
+      </div>
+      <input class="stepper__input" id="stepper-flex-1" name="stepper-flex" type="radio"/>
+      <div class="stepper__step">
+        <label class="stepper__button" for="stepper-flex-1">vanilla</label>
+        <p class="stepper__content" for="stepper-flex-1">coming from heaven</p>
+      </div>
+      <input class="stepper__input" id="stepper-flex-2" name="stepper-flex" type="radio"/>
+      <div class="stepper__step">
+        <label class="stepper__button" for="stepper-flex-2">strawberry</label>
+        <p class="stepper__content" for="stepper-flex-2">red and sweet</p>
+      </div>
+      <input class="stepper__input" id="stepper-flex-3" name="stepper-flex" type="radio"/>
+      <div class="stepper__step">
+        <label class="stepper__button" for="stepper-flex-3">manga</label>
+        <p class="stepper__content" for="stepper-flex-3">we need more yellow</p>
+      </div>
+      <input class="stepper__input" id="stepper-flex-4" name="stepper-flex" type="radio"/>
+      <div class="stepper__step">
+        <label class="stepper__button" for="stepper-flex-4">banana</label>
+        <p class="stepper__content" for="stepper-flex-4">banananananana Batman!</p>
+      </div>
+      <input class="stepper__input" id="stepper-flex-5" name="stepper-flex" type="radio"/>
+      <div class="stepper__step">
+        <label class="stepper__button" for="stepper-flex-5">apple</label>
+        <p class="stepper__content" for="stepper-flex-5">The one that don't make you sleep</p>
+      </div>
+      <input class="stepper__input" id="stepper-flex-6" name="stepper-flex" type="radio"/>
+      <div class="stepper__step">
+        <label class="stepper__button" for="stepper-flex-6">orange</label>
+        <p class="stepper__content" for="stepper-flex-6">only for the juice</p>
+      </div>
+    </div>
+  </li>
+</ul>

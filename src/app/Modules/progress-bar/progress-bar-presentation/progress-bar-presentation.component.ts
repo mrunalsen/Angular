@@ -1,41 +1,47 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { formdetails } from '../model/progress-bar-model';
-import { ProgressBarPresenterService } from '../progress-bar-presenter/progress-bar-presenter.service';
-import { Location } from '@angular/common';
-
 @Component({
   selector: 'app-progress-bar-presentation',
   templateUrl: './progress-bar-presentation.component.html',
   styleUrls: ['./progress-bar-presentation.component.scss']
 })
 export class ProgressBarPresentationComponent implements OnInit {
-  public progressForm : FormGroup;
-  private progressFormData : formdetails
+  public info: FormGroup;
+  public contact: FormGroup;
 
-  @Output() public submitData: EventEmitter<formdetails>;
+  public isinfo: boolean = false;
+  public iscontact: boolean = false;
+  public isinfoform: boolean = false;
+  public iscontactform: boolean = false;
 
-  constructor(
-    private formpresenter: ProgressBarPresenterService, 
-    private fb: FormBuilder,
-    private location: Location
-    ) { 
-    this.submitData = new EventEmitter;
-  }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
- this.progressForm = this.fb.group(
-   {
-    username: ['', Validators.required],
-    email : ['',Validators.required],
-    password : ['',Validators.required],
-   }
- )
+    this.info = this.fb.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      username: ['', Validators.required]
+    });
+    this.contact = this.fb.group({
+      contact: ['', Validators.required],
+      email: ['', Validators.required],
+    })
   }
- onSubmit(){
-   this.formpresenter.onSubmit(this.progressForm)
- }
- onPrevious() {
-  this.location.back();
-}
+  get getvalue() {
+    return this.info.controls;
+  }
+
+  public next() {
+    if (this.info.valid) {
+      this.iscontact = true;
+    }
+    if (this.iscontact && this.contact.valid) {
+      this.isinfoform = true;
+    }
+  }
+  public previous() {
+    this.contact.reset();
+    this.iscontact = false;
+    this.isinfoform = false;
+  }
 }
