@@ -17,52 +17,6 @@ body {
     overflow: hidden;
 }
 
-.h-100 {
-    height: 100%;
-}
-.w-100 {
-width: 100%;
-}
-.p-20 {
-    padding: 20px;
-}
-.pl-20 {
-    padding-left: 20px;
-}
-.pr-20 {
-    padding-right: 20px;
-}
-
-.overflow-auto {
-    overflow: auto;
-}
-
-// FLEX properties
-
-.d-flex {
-    display: flex;
-}
-.flex-col {
-    flex-direction: column;
-}
-.flex-grow-1{
-    flex-grow: 1;
-}
-.content-center {
-    justify-content: center;
-}
-.align-items-center {
-    align-items: center;
-}
-.space-between {
-    justify-content: space-between;
-}
-
-.overflow-vertical {
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
 
 a {
     text-decoration: none;
@@ -120,5 +74,7 @@ aside {
         }
     }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.pointer-cursor{
+    cursor: pointer;
+}

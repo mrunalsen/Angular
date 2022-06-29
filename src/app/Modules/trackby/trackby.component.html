@@ -1,0 +1,4 @@
+<div>
+    <p *ngFor="let user of users;trackBy:trackById">{{user.name}}</p>
+    <button (click)="assignData()">Assign User</button>
+</div>
